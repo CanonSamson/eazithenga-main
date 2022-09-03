@@ -24,13 +24,13 @@ const Login = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <Button value=" LogIn" link="" />
-                    <Link className="inline-block align-baseline text-sm text-blue hover:text-blue/40" to="#">
+                    <Link className="inline-block align-baseline text-sm text-orange hover:text-orange/40" to="#">
                         Forgot Password?
                     </Link>
                 </div>
             </form>
             <span className="inline-block align-baseline font-bold text-sm text-black" to="#">
-                don't have an account <Link className=" text-blue hover:text-blue/40" to="/signup">
+                don't have an account <Link className=" text-orange hover:text-orange/40" to="/signup">
                     Sign Up</Link>
             </span>
             <span className=" bg-slate-100 w-10 h-10 text-xl absolute right-[10%] z-20 bottom-4 shadow-lg"> </span>

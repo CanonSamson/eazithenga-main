@@ -30,7 +30,7 @@ const SignUp = () => {
 
 
                 <div className="flex items-center justify-between">
-                    <button className=" border border-blue hover:bg-blue-dark text-black font-bold py-2 px-7 rounded" type="button">
+                    <button className=" border border-orange hover:bg-orange-dark text-black font-bold py-2 px-7 rounded" type="button">
                         Register
                     </button>
                 </div>
@@ -38,7 +38,7 @@ const SignUp = () => {
 
 
             <span className="inline-block align-baseline  text-sm text-black" to="#">
-                have an account <Link className=" text-blue hover:text-blue/40" to="/login">Log In</Link>
+                have an account <Link className=" text-orange hover:text-orange/40" to="/login">Log In</Link>
             </span>
 
         </div>
