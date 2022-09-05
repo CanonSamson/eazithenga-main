@@ -2,9 +2,24 @@ import { Link } from "react-router-dom";
 import Input from "../components/Input";
 import logo from '../asset/icon_svg/logo.svg'
 import Textarea from "../components/Textarea";
+import { useState } from "react";
 
 
 const SignUp = () => {
+    const initialValues = {
+        whatsappNumber: '',
+        storeName: '',
+        description: '',
+        password: '',
+        confirmPassword: ''
+    }
+    const [formValues, setFormValues] = useState(initialValues)
+    const handleChange = (e) => {
+        const { value, name } = e.target;
+        setFormValues({ ...formValues, [name]: value })
+        console.log(formValues)
+    }
+
     return (
         <div className=" p-5 my-20 tablet:my-0 tablet:h-screen w-full flex flex-col justify-center items-center">
             <Link to="/">
@@ -19,13 +34,43 @@ const SignUp = () => {
                 <h1 className=" text-xl font-semibold mb-5">Register Your Store</h1>
 
                 <div className="mb-4 Btablet:grid gap-5 Btablet:grid-cols-2">
-                    <Input type="text" placeholder="WhatsApp Number" />
-                    <Input type="text" placeholder="Store Name" />
+                    <Input type="tel"
+                        placeholder="WhatsApp Number"
+                        name="whatsappNumber"
+                        errorMessage="WhatsApp Number must be a vaild SF telephone number  (11 digits) don't include +  "
+                        value={formValues.whatsappNumber}
+                        onChange={handleChange}
+                        required pattern="^\d{11}$" />
+
+                    <Input type="text"
+                        placeholder="Store Name"
+                        name="storeName"
+                        value={formValues.storeName}
+                        errorMessage="Store Name is required"
+                        onChange={handleChange}
+                        required pattern="" />
+                        
                     <div className=" col-span-2">
-                        <Textarea placeholder="Description" />
+                        <Textarea placeholder="Description"
+                            name="description"
+                            value={formValues.description}
+                            onChange={handleChange}
+                            required pattern="" />
                     </div>
-                    <Input type="password" placeholder="Password" />
-                    <Input type="password" placeholder="Confirm  Password" />
+
+                    <Input type="password"
+                        placeholder="Password"
+                        name="password"
+                        value={formValues.password}
+                        onChange={handleChange} 
+                        required />
+
+                    <Input type="password"
+                        placeholder="Confirm  Password"
+                        name="confirmPassword"
+                        value={formValues.confirmPassword}
+                        onChange={handleChange} 
+                        required />
                 </div>
 
 

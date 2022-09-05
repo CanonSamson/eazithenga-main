@@ -6,6 +6,15 @@
 .main-input:focus~.text-input {
     @apply text-black bg-white transform -translate-y-5 z-30 translate-x-2
 }
+.error {
+    display: none;
+}
+.main-input:invalid[focused="true"] ~.error {
+    display: block;
+
+}
+
+
 
 .why:last-child {
     background-color: #ff914d;

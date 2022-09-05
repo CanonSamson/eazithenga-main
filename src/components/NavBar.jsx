@@ -36,10 +36,6 @@ const NavBar = () => {
                                 <HashLink onClick={Toggler} smooth to="#features" ><span className=' text-orange'>01. </span>Features</HashLink>
                             </li>
 
-                            {/* <li className=' my-7 border-b py-2 px-10 '>
-                                <HashLink onClick={Toggler} smooth to="#about" ><span className=' text-orange'>02. </span>About</HashLink>
-                            </li> */}
-
                             <li className=' my-7 border-b py-2 px-10 '>
                                 <HashLink onClick={Toggler} smooth to="#contactus" ><span className=' text-orange'>03. </span>Contact</HashLink>
                             </li>
@@ -49,13 +45,18 @@ const NavBar = () => {
                         </Link>
                     </div>
                 </div>
-                <div onClick={Toggler} className={`${toggle ? "flex" : "hidden"} w-full h-screen z-30 bg-black/30 blur-sm fixed top-0 left-0`}></div>
+                <div onClick={Toggler} className={`${toggle ? "flex" : "hidden"} w-full h-[100%] z-30 bg-black/30 blur-sm fixed top-0 left-0`}></div>
             </nav>
-            <Laptop About={Toggler} Features={Toggler} Contact={Toggler} />
+
+            {/* for laptop srceen size */}
+            <Laptop  Features={Toggler} Contact={Toggler} />
         </div>
     );
 }
-const Laptop = ({ About, Features, Contact }) => {
+
+
+
+const Laptop = ({ Features, Contact }) => {
 
     return (
         <div className=' hidden Btablet:block'>
@@ -66,16 +67,12 @@ const Laptop = ({ About, Features, Contact }) => {
                     <HashLink onClick={Features}  className="mx-4" smooth to="#features" >
                         <span className=' text-orange'>01. </span>Features
                     </HashLink>
-
-                    {/* <HashLink onClick={About} className="mx-4"  smooth to="#about" >
-                        <span className=' text-orange'>02. </span>About
-                    </HashLink> */}
                     <HashLink onClick={Contact}  className="mx-4" smooth to="#contactus" >
                         <span className=' text-orange'>02. </span>Contact
                     </HashLink>
 
                     <Link to="/signup">
-                        <button className='  active:opacity-70 active:shadow-2xl active:scale-105 text-black p-2 text-sm px-8 rounded border-2 border-orange '>Sign Up</button>
+                        <button className='   active:opacity-70 active:shadow-2xl active:scale-105 text-black p-2 text-sm px-8 rounded border-2 border-orange '>Sign Up</button>
                     </Link>
                 </div>
             </nav>

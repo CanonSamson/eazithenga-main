@@ -45,7 +45,7 @@ const LandingPage = () => {
         <div className=" relative">
             <NavBar />
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
-                <div className=" bg-orange p-5 rounded-full fixed bottom-20 right-5 text-white animate-bounce z-30">
+                <div className=" bg-orange p-5 rounded-full fixed bottom-20 right-5 text-white  z-30">
                     <MdMessage size={10} />
                 </div>
 
