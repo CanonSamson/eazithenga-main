@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div className=" bg-orange py-10 px-5   relative">
 
-            <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full absolute bottom-20 right-5 text-white animate-bounce z-30">
+            <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full absolute bottom-5 right-5 text-white  z-30">
                 <MdArrowCircleUp />
             </HashLink>
             <div>

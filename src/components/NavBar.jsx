@@ -1,5 +1,5 @@
 //img imports
-import logo from '../asset/icon_svg/logo.svg'
+import logo from '../asset/icon_svg/logo.png'
 
 //components
 import { Link } from 'react-router-dom'
@@ -20,7 +20,7 @@ const NavBar = () => {
         <div className=' relative'>
             <nav id='nav' className='Btablet:hidden'>
                 <div className='flex h-[60px]  justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
-                    <img src={logo} alt="logo" />
+                    <img className=' w-32' src={logo} alt="logo" />
                     <div onClick={Toggler}>
                         <MdMenu size={24}  />
                     </div>
@@ -61,7 +61,7 @@ const Laptop = ({ Features, Contact }) => {
     return (
         <div className=' hidden Btablet:block'>
             <nav className='flex h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
-                <img src={logo} alt="logo" />
+                <img className=' w-32' src={logo} alt="logo" />
                 <div className=' flex  items-center  justify-between '>
 
                     <HashLink onClick={Features}  className="mx-4" smooth to="#features" >
