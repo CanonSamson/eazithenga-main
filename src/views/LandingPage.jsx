@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 
 //icons
-import { MdMessage } from "react-icons/md";
+import { MdArrowCircleUp } from "react-icons/md";
 
 //import imgs here
 import headerbg from '../asset/icon_svg/ill.svg'
@@ -17,6 +17,7 @@ import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
 
 import { Outlet } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const LandingPage = () => {
     const WhyChooseEazi = [
@@ -45,10 +46,10 @@ const LandingPage = () => {
         <div className=" relative">
             <NavBar />
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
-                <div className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-30">
-                    <MdMessage size={10} />
-                </div>
 
+                <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-30">
+                    <MdArrowCircleUp />
+                </HashLink>
                 <section className=" Btablet:hidden ">
                     <div>
                         <motion.div
@@ -73,8 +74,7 @@ const LandingPage = () => {
 
                     <h1 className=" font-bold text-3xl tablet:text-4xl laptop:text-5xl "><span className=" text-white Btablet:text-black  text-2xl tablet:text-3xl laptop:text-5xl ">Selling via Social </span><br />Media made Easy</h1>
                     <p className=" py-2 laptop:w-[80%] tablet:pb-5 tablet:text-lg">Tired of missing customers? With Eazi Thenga - you'll never miss one again! we help small businesses set up online storefront where you can showcase your products, receive orders, chat customers and much more.</p>
-                    <div className=" flex justify-center Btablet:justify-start mt-5">
-                        <Button value="SELL EASILY" link="/store" />
+                    <div className=" flex justify-start ml-[-10px]  mt-5">
                         <Button value="CONTACT US" link="#contactus" />
                     </div>
                 </section>

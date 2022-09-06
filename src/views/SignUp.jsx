@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Input from "../components/Input";
-import logo from '../asset/icon_svg/logo.svg'
+import logo from '../asset/icon_svg/logo.png'
 import Textarea from "../components/Textarea";
 import { useState } from "react";
 
@@ -23,7 +23,7 @@ const SignUp = () => {
     return (
         <div className=" p-5 my-20 tablet:my-0 tablet:h-screen w-full flex flex-col justify-center items-center">
             <Link to="/">
-                <img src={logo} alt="" />
+                <img className=" w-40" src={logo} alt="" />
             </Link>
             <span className=" bg-slate-100 w-10 h-10 text-xl absolute left-[10%] z-20 top-4 shadow-lg"> </span>
             <span className=" bg-orange-40 w-10 h-10 text-xl absolute left-[20%] z-20 top-10 shadow-lg"> </span>

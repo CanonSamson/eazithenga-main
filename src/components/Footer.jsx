@@ -1,14 +1,11 @@
 import { HashLink } from 'react-router-hash-link';
 
-import { MdArrowCircleUp } from "react-icons/md";
+
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className=" bg-orange py-10 px-5   relative">
 
-            <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full absolute bottom-5 right-5 text-white  z-30">
-                <MdArrowCircleUp />
-            </HashLink>
             <div>
                 <ul className='  '>
                     <li className=' my-5 text-white py-2  '>

@@ -18,7 +18,9 @@ const Annually = () => {
                         <div className="flex justify-center  mt-3 items-end ">
                             <span className=" text-5xl font-bold">R</span>
                             <span className=" text-6xl font-bold ml-[2px]">2000</span>
-                            <span className=" absolute  w-16 h-16 border border-orange border-dashed flex justify-center animate-pulse items-center text-2xl font-bold rounded-full text-orange  right-0 top-0">20%</span>
+                            <span className=" absolute  
+                             border-dashed flex justify-center animate-pulse items-center 
+                             text-xl font-bold rounded-full text-orange  right-5 top-2">20% OFF</span>
                         </div>
                         <div className=" flex flex-col ">
 

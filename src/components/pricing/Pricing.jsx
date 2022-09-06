@@ -27,7 +27,7 @@ const Pricing = () => {
             <div>
                 <div className=" flex  justify-center my-5">
                     <NavLink activeClassName="bg-orange text-white" inActiveClassName=" text-black" className='  active:bg-orange active:text-white active:opacity-70 active:shadow-2xl bg-white shadow-lg active:scale-105  p-3 text-sm px-5 rounded-l-xl border-2 border-orange sm:p-3 sm:px-10 mr-2' to="/">
-                        <button >MONTHLY </button>
+                        <button >Monthly </button>
                     </NavLink>
                     <NavLink activeClassName="bg-orange text-white" inActiveClassName=" text-black" className='   active:bg-transparent  active:opacity-70 active:shadow-2xl shadow-lg active:scale-105 active:text-black p-3 text-sm px-5 rounded-r-xl border-2 border-orange sm:p-3 sm:px-10 mr-2' to="/annually">
                         <button>Annualy</button>
