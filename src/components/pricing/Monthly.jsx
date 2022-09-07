@@ -77,13 +77,10 @@ const Monthly = () => {
 
 
                     <div className="flex flex-col justify-center shadow-xl p-10 w-[350px] mx-5  relative h-[60 0px] rounded-xl">
-                        <p className=" bg-orange text-white text-xl absolute top-[-10px] left-[-10px] py-2 px-3 rounded ">Professional</p>
+                        <p className=" bg-orange text-white text-xl absolute top-[-10px] left-[-10px] py-2 px-3 rounded uppercase ">Professional</p>
                         <div className="flex justify-center  mt-3 items-end  ">
                             <span className=" text-5xl font-bold">R</span>
                             <span className=" text-6xl font-bold ml-[2px]">200</span>
-                            <span className=" absolute  
-                             border-dashed flex justify-center animate-pulse items-center 
-                             text-xl font-bold rounded-full text-orange  right-5 top-2">20% OFF</span>
                         </div>
                         <div className=" flex flex-col ">
 

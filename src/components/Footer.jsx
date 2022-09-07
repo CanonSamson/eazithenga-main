@@ -19,10 +19,9 @@ const Footer = () => {
                     <li className=' my-5 text-white py-2  '>
                         <HashLink smooth to="#contactus" >Contact</HashLink>
                     </li>
-                </ul>
-
-                <div className=' flex items-center justify-center '>
-                    <a className='text-white mx-10' href="https://www.linkedin.com/company/eazi-thenga/">
+                    
+                <div className=' flex items-center  '>
+                    <a className='text-white ' href="https://www.linkedin.com/company/eazi-thenga/">
                         <FaLinkedin />
                     </a>
 
@@ -31,6 +30,8 @@ const Footer = () => {
                     </a>
 
                 </div>
+                </ul>
+
                 {/* whatsapp, Twitter: , LinkedIn:  */}
             </div>
         </div>
