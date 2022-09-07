@@ -6,7 +6,7 @@ import Input from './Input';
 import Textarea from './Textarea';
 
 //images
-import contact from '../asset/icon_svg/contact.svg'
+import contact from '../asset/icon_svg/6.svg'
 
 //icons
 import { MdPhone, MdFmdGood, MdEmail } from "react-icons/md";
@@ -41,35 +41,35 @@ const ContactUs = () => {
                         <MdEmail size={30} />
                     </div>
                     <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-xl font-semibold my-4'>Email Us:</h1>
+                        <h1 className=' text-xl Btablet:text-lg font-semibold my-4'>Email Us:</h1>
                         <p className=' text-center' >info@eazithenga.com</p>
                     </div>
                 </a>
 
 
-                <section className=' bg-white   flex flex-col Btablet:w-[33%] Btablet:shadow-xl  Btablet:mx-[33.3%] Btablet:absolute top-20 h-[250px] left-0  justify-center items-center p-10'>
+                <a href='https://wa.link/483ix2' className=' bg-white w-full  flex flex-col Btablet:w-[33%] Btablet:shadow-xl  Btablet:mx-[33.3%] Btablet:absolute top-20 h-[250px] left-0  justify-center items-center p-10'>
                     <div className='  p-3 text-orange rounded-full border-2 border-dashed border-orange'>
                         <MdPhone size={30} />
                     </div>
-                    <a href='https://wa.link/483ix2' className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold my-3'>Call Us:</h1>
+                    <div  className='flex flex-col justify-center items-center'>
+                        <h1 className=' text-2xl font-semibold Btablet:text-lg my-3'>Call Us:</h1>
                         <div className=' flex items-center'>
                             <p>Tel:</p>
-                            <p >+27 60 074 8715 </p>
+                            <p className='Btablet:text-sm' >+27 60 074 8715 </p>
                         </div>
 
-                    </a>
-                </section>
+                    </div>
+                </a>
 
 
                 <a href='https://www.google.com/maps/place/7+Churchill+Rd,+Plumstead,+Cape+Town,+7801,+South+Africa/@-34.0154752,18.4795903,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc43a98d21bb0b:0x5efa5535c4e72f74!8m2!3d-34.0154797!4d18.481779'
-                    className=' bg-white   flex flex-col Btablet:w-[33%] Btablet:shadow-xl Btablet:ml-[66.6%] Btablet:absolute top-44 h-[250px] right-0  justify-center items-center p-10'>
+                    className=' bg-white  w-full flex flex-col Btablet:w-[33%] Btablet:shadow-xl Btablet:ml-[66.6%] Btablet:absolute top-44 h-[250px] right-0  justify-center items-center p-10'>
                     <div className='  p-3 text-orange rounded-full border-2 border-dashed border-orange'>
                         <MdFmdGood size={30} />
                     </div>
                     <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold my-3'>South Africa</h1>
-                        <p className=' text-center' > 7 Churchill Road, Plumstead, 7800</p>
+                        <h1 className=' text-2xl font-semibold my-3 Btablet:text-xl'>South Africa</h1>
+                        <p className=' text-center Btablet:text-sm' > 7 Churchill Road, Plumstead, 7800</p>
                     </div>
                 </a>
 

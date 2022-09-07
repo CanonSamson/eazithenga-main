@@ -4,7 +4,7 @@
 
 .main-input:valid~.text-input,
 .main-input:focus~.text-input {
-    @apply text-black bg-white transform -translate-y-5 z-30 translate-x-[-20px]
+    @apply text-black bg-white transform -translate-y-0 z-30 translate-x-[60%]
 }
 .error {
     display: none;

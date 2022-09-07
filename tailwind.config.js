@@ -11,9 +11,11 @@ module.exports = {
         orange: '#ff914d',
       },
       screens: {
-        'tablet': '500px',
+        'tablet': '640px',
         // => @media (min-width: 500px) { ... }
-        'Btablet': '600px',
+        'Btablet': '683px',
+        // => @media (min-width: 600px) { ... }
+        'Stablet': '700px',
         // => @media (min-width: 600px) { ... }
         'laptop': '1024px',
         // => @media (min-width: 1024px) { ... }

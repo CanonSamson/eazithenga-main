@@ -8,9 +8,9 @@ import { MdArrowCircleUp } from "react-icons/md";
 
 //import imgs here
 import headerbg from '../asset/icon_svg/ill.svg'
-import online from '../asset/icon_svg/icon-online.svg'
-import sell from '../asset/icon_svg/ta.svg'
-import data from '../asset/icon_svg/Data.svg'
+import online from '../asset/icon_svg/8.svg'
+import sell from '../asset/icon_svg/5.svg'
+import data from '../asset/icon_svg/4.svg'
 import phone from '../asset/icon_svg/phone.svg'
 
 import ContactUs from "../components/ContactUs";
@@ -50,7 +50,7 @@ const LandingPage = () => {
                 <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-30">
                     <MdArrowCircleUp />
                 </HashLink>
-                <section className=" Btablet:hidden ">
+                <section className=" tablet:hidden ">
                     <div>
                         <motion.div
                             initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: .45 }}
@@ -70,17 +70,17 @@ const LandingPage = () => {
                 </section>
 
 
-                <section className=" relative z-10 Btablet:w-[50%]  laptop:w-[100%]">
+                <section className=" relative z-10 tablet:w-[50%]  laptop:w-[100%]">
 
-                    <h1 className=" font-bold text-3xl tablet:text-4xl laptop:text-5xl "><span className=" text-white Btablet:text-black  text-2xl tablet:text-3xl laptop:text-5xl ">Selling via Social </span><br />Media made Easy</h1>
-                    <p className=" py-2 laptop:w-[80%] tablet:pb-5 tablet:text-lg">Tired of missing customers? With Eazi Thenga - you'll never miss one again! we help small businesses set up online storefront where you can showcase your products, receive orders, chat customers and much more.</p>
+                    <h1 className=" font-bold text-3xl  laptop:text-5xl "><span className=" text-white Btablet:text-black  text-2xl  laptop:text-5xl ">Selling via Social </span><br />Media made Easy</h1>
+                    <p className=" py-2  tablet:pb-5 tablet:text-lg">Tired of missing customers? With Eazi Thenga - you'll never miss one again! we help small businesses set up online storefront where you can showcase your products, receive orders, chat customers and much more.</p>
                     <div className=" flex justify-start ml-[-10px]  mt-5">
                         <Button value="CONTACT US" link="#contactus" />
                     </div>
                 </section>
 
 
-                <section className=" hidden Btablet:flex Btablet:w-[50%] ">
+                <section className=" hidden tablet:flex tablet:w-[50%]  ">
                     <motion.div
                         initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: .45 }} className=" text-orange-400 font-mono  shadow-lg absolute right- p-2 rounded"> GET ORDERS VIA </motion.div>
                     <motion.div
@@ -91,7 +91,7 @@ const LandingPage = () => {
                     <motion.div
                         initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 1.5, duration: .45 }} className=" text-blue font-semibold text-xl absolute left-[50%] bottom-20"> GET </motion.div>
                     <motion.div
-                        initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 2, duration: .45 }} className=" text-blue font-semibold text-xl absolute left-[55%] p-2 rounded bottom-32"> ONLINE STORE</motion.div>
+                        initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 2, duration: .45 }} className=" text-blue font-semibold text-xl absolute left-[55%] p-2 rounded bottom-32 z-20"> ONLINE STORE</motion.div>
                     <img className="z-20 relative mb-16  mt-[5%] w-[560px]  " src={headerbg} alt="headerigm" />
                     <span className="  absolute top-[200px] z-2  right-0 w-[340px] rounded-l-full h-[200px] bg-orange"></span>
                 </section>

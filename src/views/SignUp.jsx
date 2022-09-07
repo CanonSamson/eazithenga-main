@@ -29,11 +29,11 @@ const SignUp = () => {
             <span className=" bg-orange-40 w-10 h-10 text-xl absolute left-[20%] z-20 top-10 shadow-lg"> </span>
 
 
-            <form className="bg-white shadow-md rounded px-5 pt-6 pb-8 mb-4 flex flex-col w-[100%] max-w-[600px]">
+            <form className="bg-white Btablet:shadow-md rounded px-5 pt-6 pb-8 mb-4 flex flex-col w-[100%] max-w-[600px]">
 
                 <h1 className=" text-xl font-semibold mb-5">Register Your Store</h1>
 
-                <div className="mb-4 Btablet:grid gap-5 Btablet:grid-cols-2">
+                <div className="mb-4 Btablet:grid Btablet:gap-5 Btablet:grid-cols-2">
                     <Input type="tel"
                         placeholder="WhatsApp Number"
                         name="whatsappNumber"

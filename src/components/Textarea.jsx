@@ -8,7 +8,7 @@ const Textarea = (props) => {
         setFocused(true);
     }
     return ( 
-        <div className=" relative ">
+        <div className=" relative  mt-5">
         <textarea {...inputProps} onChange={onChange} 
         className=" main-input w-full p-3 border border-black border-opacity-60 focus:outline-none relative 
         bg-transparent z-20 rounded text-black"  required onBlur={handleFocus} focused={focused.toString()} />
