@@ -1,23 +1,30 @@
-import Button from "../components/Button";
 import NavBar from "../components/NavBar";
-import { motion } from 'framer-motion'
-
 
 //icons
 import { MdArrowCircleUp } from "react-icons/md";
+import { BsCart3 } from 'react-icons/bs'
+import { IoCheckmarkDoneCircle } from 'react-icons/io5'
 
 //import imgs here
-import headerbg from '../asset/icon_svg/ill.svg'
+import hero from '../asset/icon_svg/hero.svg'
 import online from '../asset/icon_svg/8.svg'
 import sell from '../asset/icon_svg/5.svg'
 import data from '../asset/icon_svg/4.svg'
 import phone from '../asset/icon_svg/phone.svg'
+import bg from '../asset/icon_svg/bg.png'
+import bg1 from '../asset/icon_svg/bg1.png'
+import bg2 from '../asset/icon_svg/bg2.png'
+import cb from '../asset/icon_svg/cb.png'
+//icons
+import { MdPhone, MdFmdGood, MdEmail } from "react-icons/md";
 
-import ContactUs from "../components/ContactUs";
+
 import Footer from "../components/Footer";
 
 import { Outlet } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom";
+
 
 const LandingPage = () => {
     const WhyChooseEazi = [
@@ -31,83 +38,72 @@ const LandingPage = () => {
         {
             id: 2,
             header: 'One Platform',
-            icon: data,
+            icon: online,
             describtion: 'All your small business solutions in one platform, from admin to marketing.'
         },
         {
             id: 3,
             header: 'Manage Your Store',
-            icon: online,
+            icon: data,
             describtion: 'Customers can view all your products and their prices. With Eazi Thenga, ordering from your business with be as eay as one,two,three'
         },
 
     ]
     return (
-        <div className=" relative">
-            <NavBar />
-            <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
+        <div className=" relative overflow-hidden">
 
+            <NavBar />
+            <img className=" absolute top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />
+            <img className=" absolute top-[600px] right-[-150px] overflow-hidden  " src={bg1} alt="" />
+            <img className=" absolute top-[1500px] left-[-150px] overflow-hidden  " src={bg2} alt="" />
+            <img className=" absolute  right-10 top-[450px]" src={cb} alt="" />
+            <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
                 <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-30">
                     <MdArrowCircleUp />
                 </HashLink>
-                <section className=" tablet:hidden ">
+                <section className=" Btablet:flex items-center justify-around relative ">
+
                     <div>
-                        <motion.div
-                            initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: .45 }}
-                            className=" text-orange-400 font-mono  shadow-lg absolute left-5 p-2 rounded"> GET ORDERS VIA </motion.div>
-                        <motion.div
-                            initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ delay: 1, duration: .45 }} className=" text-orange-400 font-mono  shadow-lg absolute top-36 left-[100px] p-2 rounded "> WHATSAPP </motion.div>
-                        <span className=" bg-orange-40 w-10 h-10 text-xl absolute right-40 top-20 shadow-lg"> </span>
-                        <span className=" bg-slate-100 w-10 h-10 text-xl absolute right-[10%] z-20 bottom-4 shadow-lg"> </span>
-                        <span className=" bg-orange-40 w-10 h-10 text-xl absolute right-[20%] z-20 bottom-10 shadow-lg"> </span>
-                        <motion.div
-                            initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 1.5, duration: .45 }} className=" text-orange   absolute rihgt-0 z-30 top-[30%] right-10 bg-slate-50 p-2 rounded"> START YOUR </motion.div>
-                        <motion.div
-                            initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 2, duration: .45 }} className=" text-blue font-semibold text-xl absolute rihgt-0 z-30 top-[39%] bg-white shadow-xl right-10 p-2 rounded"> ONLINE STORE</motion.div>
+                        <h1 className=" text-4xl font-bold mb-2 mt-20">Selling Via Social<br />Media Made Easy</h1>
+                        <p>Eazi Thenga helps small businesses set up online storefronts where you can showcase your products,
+                            receive orders, chat customers and much more.</p>
+                        <Link to="/" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
+                            <button >Get Started</button>
+                        </Link>
                     </div>
-                    <img className="z-20 relative mb-10 w-[300px]  tablet:w-[350px] " src={headerbg} alt="headerigm" />
-                    <span className=" absolute top-[200px] z-2  left-0 w-[300px] tablet:w-[450px] tablet:h-[270px] rounded-r-full h-[200px] bg-orange"></span>
-                </section>
 
+                    <div className=" mt-10 flex justify-center">
 
-                <section className=" relative z-10 tablet:w-[50%]  laptop:w-[100%]">
+                        <div className=" w-full relative">
+                            <div className=" flex items-center bg-lblue text-blue absolute right-[-10px] top-16 p-4 ">
+                                <BsCart3 />
+                                <span className="ml-2">Get An Online Store</span>
+                            </div>
+                            <img className=" w-[400px] Btablet:w-[600px] m-auto" src={hero} alt="hero" />
 
-                    <h1 className=" font-bold text-3xl  laptop:text-5xl "><span className=" text-white Btablet:text-black  text-2xl  laptop:text-5xl ">Selling via Social </span><br />Media made Easy</h1>
-                    <p className=" py-2  tablet:pb-5 tablet:text-lg">Tired of missing customers? With Eazi Thenga - you'll never miss one again! we help small businesses set up online storefront where you can showcase your products, receive orders, chat customers and much more.</p>
-                    <div className=" flex justify-start ml-[-10px]  mt-5">
-                        <Button value="CONTACT US" link="#contactus" />
+                            <div className=" flex items-center bg-blue text-white absolute left-0 bottom-16 p-4 ">
+                                <IoCheckmarkDoneCircle />
+                                <span className="ml-2">Get Orders Via Whatsapp</span>
+                            </div>
+                        </div>
                     </div>
-                </section>
 
-
-                <section className=" hidden tablet:flex tablet:w-[50%]  ">
-                    <motion.div
-                        initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ duration: .45 }} className=" text-orange-400 font-mono  shadow-lg absolute right- p-2 rounded"> GET ORDERS VIA </motion.div>
-                    <motion.div
-                        initial={{ y: -1000 }} animate={{ y: 0 }} transition={{ delay: 1, duration: .45 }} className=" text-orange-400 font-mono  shadow-lg absolute top-40 z-30 right-[5px] p-2 rounded"> WHATSAPP </motion.div>
-                    <span className=" bg-orange-40 w-10 h-10 text-xl absolute right-40 top-20 shadow-lg"> </span>
-                    <span className=" bg-slate-100 w-10 h-10 text-xl absolute right-[10%] z-20 bottom-4 shadow-lg"> </span>
-                    <span className=" bg-orange-40 w-10 h-10 text-xl absolute right-[20%] z-20 bottom-10 shadow-lg"> </span>
-                    <motion.div
-                        initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 1.5, duration: .45 }} className=" text-blue font-semibold text-xl absolute left-[50%] bottom-20"> GET </motion.div>
-                    <motion.div
-                        initial={{ x: -2000 }} animate={{ x: 0 }} transition={{ delay: 2, duration: .45 }} className=" text-blue font-semibold text-xl absolute left-[55%] p-2 rounded bottom-32 z-20"> ONLINE STORE</motion.div>
-                    <img className="z-20 relative mb-16  mt-[5%] w-[560px]  " src={headerbg} alt="headerigm" />
-                    <span className="  absolute top-[200px] z-2  right-0 w-[340px] rounded-l-full h-[200px] bg-orange"></span>
                 </section>
             </header>
 
 
 
-            <section className=" my-20 max-w-[1000px] relative m-auto bg-gray-50">
-                <div id="features" className=" w-full h-20"></div>
-                <h3 className=" text-2xl font-semibold mb-5 px-5">A Home for Every Trader</h3>
-                <p className=" w-[90%] Btablet:w-[60%] px-5">All your small business solutions in one platform, from admin to marketing.</p>
+            <section className="  laptop:max-w-[1000px] relative m-auto">
+                <div className=" flex justify-center flex-col">
+                    <h2 className=" text-center font-semibold text-xl">A Home For Every Trader</h2>
+                    <p className=" text-center">All your small business solutions in one platform, from admin to marketing.</p>
+                </div>
                 <div className=" grid grid-cols-1 tablet:grid-cols-2 Btablet:grid-cols-3 gap-5 my-10">
                     {
                         WhyChooseEazi.map((text) => (
-                            <div key={text.id} className=" bg-white why shadow-xl p-5">
-                                <img src={text.icon} alt="" />
+                            <div key={text.id} className=" bg-white why shadow-xl p-5 mx-5 rounded-br-[50px] rounded-tl-[50px] min-h-[400px] laptop:min-w-[320px]">
+                                <img className=" h-40" src={text.icon} alt="" />
                                 <h4 className=" my-3 font-semibold text-xl">{text.header}</h4>
                                 <p>{text.describtion}</p>
                             </div>
@@ -125,7 +121,7 @@ const LandingPage = () => {
                     </div>
                 </div>
                 <div className=" flex justify-center my-10">
-                    <img src={phone} alt="" />
+                    <img className=" w-[400px] Btablet:w-[500px] m-auto" src={phone} alt="" />
                 </div>
             </section>
 
@@ -133,9 +129,47 @@ const LandingPage = () => {
 
             <Outlet />
 
-            <section>
-                <div id="contactus" className=" w-full h-20"></div>
-                <ContactUs />
+
+
+
+            <section className=' bg-gray-100 pt-10  Btablet:grid grid-cols-3 m-auto'>
+                <a href='mailto:info@eazithenga.com' className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
+                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
+                        <MdEmail size={30} />
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <h1 className=' text-xl Btablet:text-lg font-semibold '>Email Us:</h1>
+                        <p className=' text-center' >info@eazithenga.com</p>
+                    </div>
+                </a>
+
+
+                <a href='https://wa.link/483ix2' className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
+                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
+                        <MdPhone size={30} />
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <h1 className=' text-2xl font-semibold Btablet:text-lg '>Call Us:</h1>
+                        <div className=' flex items-center'>
+                            <p>Tel:</p>
+                            <p className='Btablet:text-sm' >+27 60 074 8715 </p>
+                        </div>
+
+                    </div>
+                </a>
+
+
+                <a href='https://www.google.com/maps/place/7+Churchill+Rd,+Plumstead,+Cape+Town,+7801,+South+Africa/@-34.0154752,18.4795903,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc43a98d21bb0b:0x5efa5535c4e72f74!8m2!3d-34.0154797!4d18.481779'
+                    className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
+                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
+                        <MdFmdGood size={30} />
+                    </div>
+                    <div className='flex flex-col justify-center items-center'>
+                        <h1 className=' text-2xl font-semibold Btablet:text-xl'>South Africa</h1>
+                        <p className=' text-center Btablet:text-sm' > 7 Churchill Road, Plumstead, 7800</p>
+                    </div>
+                </a>
+
             </section>
 
             <Footer />

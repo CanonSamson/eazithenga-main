@@ -31,49 +31,12 @@ const ContactUs = () => {
         e.prevemtDefault();
     }
 
+  
 
 
     return (
         <div className=' px-5 bg-gray-50 relative pb-10'>
-            <section className=' relative grid grid-cols-1 Btablet:h-[500px] Btablet:shadow-xl Btablet:w-full  tablet:grid-cols-2 Btablet:flex  gap-5 '>
-                <a href='mailto:info@eazithenga.com' className=' bg-white   flex flex-col Btablet:w-[33%] Btablet:mr-[66.6%] Btablet:absolute top-10 h-[250px] left-0  justify-center items-center p-10'>
-                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange'>
-                        <MdEmail size={30} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-xl Btablet:text-lg font-semibold my-4'>Email Us:</h1>
-                        <p className=' text-center' >info@eazithenga.com</p>
-                    </div>
-                </a>
-
-
-                <a href='https://wa.link/483ix2' className=' bg-white w-full  flex flex-col Btablet:w-[33%] Btablet:shadow-xl  Btablet:mx-[33.3%] Btablet:absolute top-20 h-[250px] left-0  justify-center items-center p-10'>
-                    <div className='  p-3 text-orange rounded-full border-2 border-dashed border-orange'>
-                        <MdPhone size={30} />
-                    </div>
-                    <div  className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold Btablet:text-lg my-3'>Call Us:</h1>
-                        <div className=' flex items-center'>
-                            <p>Tel:</p>
-                            <p className='Btablet:text-sm' >+27 60 074 8715 </p>
-                        </div>
-
-                    </div>
-                </a>
-
-
-                <a href='https://www.google.com/maps/place/7+Churchill+Rd,+Plumstead,+Cape+Town,+7801,+South+Africa/@-34.0154752,18.4795903,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc43a98d21bb0b:0x5efa5535c4e72f74!8m2!3d-34.0154797!4d18.481779'
-                    className=' bg-white  w-full flex flex-col Btablet:w-[33%] Btablet:shadow-xl Btablet:ml-[66.6%] Btablet:absolute top-44 h-[250px] right-0  justify-center items-center p-10'>
-                    <div className='  p-3 text-orange rounded-full border-2 border-dashed border-orange'>
-                        <MdFmdGood size={30} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold my-3 Btablet:text-xl'>South Africa</h1>
-                        <p className=' text-center Btablet:text-sm' > 7 Churchill Road, Plumstead, 7800</p>
-                    </div>
-                </a>
-
-            </section>
+           
 
 
             <div>

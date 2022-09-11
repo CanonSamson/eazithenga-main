@@ -2,26 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .main-input:valid~.text-input,
 .main-input:focus~.text-input {
     @apply text-black bg-white transform -translate-y-0 z-30 translate-x-[60%]
 }
+
 .error {
     display: none;
 }
-.main-input:invalid[focused="true"] ~.error {
+
+.main-input:invalid[focused="true"]~.error {
     display: block;
 
 }
 
 
-
-.why:last-child {
-    background-color: #ff914d;
-    color: white;
-}
-
-p{
+p {
     font-family: 'Poppins', sans-serif;
 
 }

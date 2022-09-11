@@ -7,8 +7,10 @@ module.exports = {
     extend: {
       colors: {
 
-        blue: "#7884F5",
+        blue: "#001E57",
+        lblue: '#D3FDF4',
         orange: '#ff914d',
+
       },
       screens: {
         'tablet': '640px',
@@ -19,7 +21,7 @@ module.exports = {
         // => @media (min-width: 600px) { ... }
         'laptop': '1024px',
         // => @media (min-width: 1024px) { ... }
-  
+
         'desktop': '1280px',
         // => @media (min-width: 1280px) { ... }
       },
