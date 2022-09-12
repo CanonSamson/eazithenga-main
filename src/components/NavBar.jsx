@@ -49,7 +49,7 @@ const NavBar = () => {
                     </div>
                     <div className=' flex flex-col justify-center m-auto items-center '>
                         <NavLink onClick={Toggler} activeClassName="text-orange  " inActiveClassName="text-blue my-5" smooth to="/" className='my-5'>Home</NavLink>
-                        <HashLink onClick={Toggler} smooth  to="/#features" className=' my-5'>Features</HashLink>
+                        <HashLink onClick={Toggler} smooth to="/#features" className=' my-5'>Features</HashLink>
 
                         <HashLink onClick={Toggler} smooth to="/#pricing" className=' my-5'>Pricing</HashLink>
 
@@ -64,9 +64,7 @@ const NavBar = () => {
             </nav>
 
 
-
-
-
+            {/* web view */}
             <div className=' hidden Btablet:block'>
                 <nav className='flex h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
                     <img className=' w-32' src={logo} alt="logo" />

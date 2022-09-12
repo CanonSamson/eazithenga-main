@@ -21,7 +21,7 @@ const SignUp = () => {
         },
         {
             id: 2,
-            label: 'Frist Name',
+            label: 'Last Name',
             placeholder: 'Last Name',
             icon: profile,
             require: '*',
