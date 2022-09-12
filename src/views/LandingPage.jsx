@@ -51,6 +51,7 @@ const LandingPage = () => {
             <img className=" absolute top-[600px] right-[-150px] overflow-hidden  " src={bg1} alt="" />
             <img className=" absolute top-[1500px] left-[-150px] overflow-hidden  " src={bg2} alt="" />
             <img className=" absolute  right-10 top-[450px]" src={cb} alt="" />
+          
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
                 <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-50">
                     <MdArrowCircleUp />
@@ -88,9 +89,10 @@ const LandingPage = () => {
 
 
             <section id="features" className="  laptop:max-w-[1000px] relative m-auto mt-10">
-                <div className=" flex justify-center flex-col">
-                    <h2 className=" text-center font-semibold text-xl tablet:text-3xl ">A Home For Every Trader</h2>
-                    <p className=" text-center tablet:text-xl">All your small business solutions in one platform, from admin to marketing.</p>
+            <span className=" absolute w-20 h-20 bg-lblue opacity-40  left-20 tablet:left-40 z-0"></span>
+                <div className=" flex justify-center flex-col mx-5">
+                    <h2 className="z-10 text-center font-semibold text-xl tablet:text-3xl ">A Home For Every Trader</h2>
+                    <p className="z-10 text-center tablet:text-xl">All your small business solutions in one platform, from admin to marketing.</p>
                 </div>
                 <div className=" grid grid-cols-1 tablet:grid-cols-2 Btablet:grid-cols-3 gap-5 my-10">
                     {

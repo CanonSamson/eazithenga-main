@@ -42,9 +42,8 @@ const ContactUs = () => {
             <div>
                 <div className=' mt-10 flex flex-col justify-center items-center'>
                     <h1 className=' font-bold text-2xl text-center'>Contact Us</h1>
-                    {/* <p className=' text-center tablet:max-w-[800px]'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quibusdam deleniti porro praesentium. Aliquam minus quisquam velit in at nam</p> */}
                 </div>
-
+                
                 <div className=' flex flex-col Btablet:flex-row justify-around tablet:mt-20 items-center ' >
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[500px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid">
