@@ -58,8 +58,8 @@ const LandingPage = () => {
                 <section className=" Btablet:flex items-center justify-around relative ">
 
                     <div>
-                        <h1 className=" text-4xl font-bold mb-2 mt-20">Selling Via Social<br />Media Made Easy</h1>
-                        <p>Eazi Thenga helps small businesses set up online storefronts where you can showcase your products,
+                        <h1 className=" text-4xl font-bold mb-2 mt-20 tablet:text-5xl">Selling Via Social<br />Media Made Easy</h1>
+                        <p className="   ">Eazi Thenga helps small businesses set up online storefronts where you can showcase your products,
                             receive orders, chat customers and much more.</p>
                         <Link to="/" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
@@ -89,8 +89,8 @@ const LandingPage = () => {
 
             <section id="features" className="  laptop:max-w-[1000px] relative m-auto mt-10">
                 <div className=" flex justify-center flex-col">
-                    <h2 className=" text-center font-semibold text-xl">A Home For Every Trader</h2>
-                    <p className=" text-center">All your small business solutions in one platform, from admin to marketing.</p>
+                    <h2 className=" text-center font-semibold text-xl tablet:text-3xl ">A Home For Every Trader</h2>
+                    <p className=" text-center tablet:text-xl">All your small business solutions in one platform, from admin to marketing.</p>
                 </div>
                 <div className=" grid grid-cols-1 tablet:grid-cols-2 Btablet:grid-cols-3 gap-5 my-10">
                     {
