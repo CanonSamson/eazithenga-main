@@ -1,4 +1,3 @@
-import NavBar from "../components/NavBar";
 
 //icons
 import { MdArrowCircleUp } from "react-icons/md";
@@ -16,10 +15,7 @@ import bg1 from '../asset/icon_svg/bg1.png'
 import bg2 from '../asset/icon_svg/bg2.png'
 import cb from '../asset/icon_svg/cb.png'
 //icons
-import { MdPhone, MdFmdGood, MdEmail } from "react-icons/md";
 
-
-import Footer from "../components/Footer";
 
 import { Outlet } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
@@ -51,14 +47,12 @@ const LandingPage = () => {
     ]
     return (
         <div className=" relative overflow-hidden">
-
-            <NavBar />
             <img className=" absolute top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />
             <img className=" absolute top-[600px] right-[-150px] overflow-hidden  " src={bg1} alt="" />
             <img className=" absolute top-[1500px] left-[-150px] overflow-hidden  " src={bg2} alt="" />
             <img className=" absolute  right-10 top-[450px]" src={cb} alt="" />
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
-                <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-30">
+                <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-50">
                     <MdArrowCircleUp />
                 </HashLink>
                 <section className=" Btablet:flex items-center justify-around relative ">
@@ -88,13 +82,12 @@ const LandingPage = () => {
                             </div>
                         </div>
                     </div>
-
                 </section>
             </header>
+            <div id="features" className=" w-full h-[60px] "></div>
 
 
-
-            <section className="  laptop:max-w-[1000px] relative m-auto">
+            <section id="features" className="  laptop:max-w-[1000px] relative m-auto mt-10">
                 <div className=" flex justify-center flex-col">
                     <h2 className=" text-center font-semibold text-xl">A Home For Every Trader</h2>
                     <p className=" text-center">All your small business solutions in one platform, from admin to marketing.</p>
@@ -124,55 +117,10 @@ const LandingPage = () => {
                     <img className=" w-[400px] Btablet:w-[500px] m-auto" src={phone} alt="" />
                 </div>
             </section>
-
-
-
+            <div id="pricing" className=" w-full h-[60px]"></div>
             <Outlet />
 
 
-
-
-            <section className=' bg-gray-100 pt-10  Btablet:grid grid-cols-3 m-auto'>
-                <a href='mailto:info@eazithenga.com' className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
-                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
-                        <MdEmail size={30} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-xl Btablet:text-lg font-semibold '>Email Us:</h1>
-                        <p className=' text-center' >info@eazithenga.com</p>
-                    </div>
-                </a>
-
-
-                <a href='https://wa.link/483ix2' className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
-                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
-                        <MdPhone size={30} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold Btablet:text-lg '>Call Us:</h1>
-                        <div className=' flex items-center'>
-                            <p>Tel:</p>
-                            <p className='Btablet:text-sm' >+27 60 074 8715 </p>
-                        </div>
-
-                    </div>
-                </a>
-
-
-                <a href='https://www.google.com/maps/place/7+Churchill+Rd,+Plumstead,+Cape+Town,+7801,+South+Africa/@-34.0154752,18.4795903,17z/data=!3m1!4b1!4m5!3m4!1s0x1dcc43a98d21bb0b:0x5efa5535c4e72f74!8m2!3d-34.0154797!4d18.481779'
-                    className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>
-                    <div className=' p-3 text-orange rounded-full border-2 border-dashed border-orange w-14 h-14 justify-center flex items-center m-auto '>
-                        <MdFmdGood size={30} />
-                    </div>
-                    <div className='flex flex-col justify-center items-center'>
-                        <h1 className=' text-2xl font-semibold Btablet:text-xl'>South Africa</h1>
-                        <p className=' text-center Btablet:text-sm' > 7 Churchill Road, Plumstead, 7800</p>
-                    </div>
-                </a>
-
-            </section>
-
-            <Footer />
         </div>
     );
 }

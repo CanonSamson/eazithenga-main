@@ -2,18 +2,20 @@ import { useState } from "react";
 
 const Input = (props) => {
     const [focused, setFocused] = useState(false)
-    const { placeholder, errorMessage, onChange, id, ...inputProps } = props;
+    const {label, icon, code,  require, errorMessage, onChange, id, ...inputProps } = props;
     const handleFocus = (e) => {
         setFocused(true);
     }
     return (
-        <div className=" relative  Btablet:py-0  mt-5 ">
- 
-            <input {...inputProps} onChange={onChange}
-                className=" main-input w-full p-3 border border-black border-opacity-60 focus:outline-none relative
-                 bg-transparent z-20 rounded text-black"
-                required onBlur={handleFocus} focused={focused.toString()} />
-            <span className="text-input absolute left-0 mx-3  bg-white px-3 py-[-2px] top-[-12px] font-mono text-gray-700 transition duration-300 z-20">{placeholder}</span>
+        <div className=" relative  Btablet:py-0    ">
+            <label className=" flex my-2 text-lg">{label} <p className=" text-red-600">{require}</p></label>
+            <div className=" flex sh pl-3 py-1 items-center">
+                <img className="w-[24px]" src={icon} alt="" />
+                <p className="mx-2">{code}</p>
+                <input {...inputProps} onChange={onChange}
+                    className=" main-input w-full p-3  focus:outline-none relative
+                    bg-transparent z-20  text-black" onBlur={handleFocus} required focused={focused.toString()} />
+            </div>
             <p className="error text-xs my-2 text-red-500">{errorMessage}</p>
         </div>
     );

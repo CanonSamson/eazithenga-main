@@ -7,19 +7,53 @@ const Footer = () => {
         <div className=" bg-orange py-10 px-5   relative">
 
             <div>
-                <ul className='  '>
-                    <li className=' my-5 text-white py-2  '>
-                        <HashLink smooth to="#features" >Features</HashLink>
-                    </li>
+                <div className=' flex justify-between'>
+                    <ul className='  '>
+                        <li className=' text-blue py-21 '>
+                            <HashLink smooth to="#features" >Quick Links</HashLink>
+                        </li>
 
-                    <li className=' my-5 text-white py-2  '>
-                        <HashLink smooth to="#about" >About</HashLink>
-                    </li>
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#about" >FAQS</HashLink>
+                        </li>
 
-                    <li className=' my-5 text-white py-2  '>
-                        <HashLink smooth to="#contactus" >Contact</HashLink>
-                    </li>
-                    
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#contactus" >Register</HashLink>
+                        </li>
+
+
+                    </ul>
+
+                    <ul className='  '>
+                        <li className=' text-blue py-1 '>
+                            <HashLink smooth to="#features" >About</HashLink>
+                        </li>
+
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#about" >Why Us</HashLink>
+                        </li>
+
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#contactus" >Features</HashLink>
+                        </li>
+                    </ul>
+
+                    <ul className='  '>
+                        <li className=' text-blue py-1 '>
+                            <HashLink smooth to="#features" >Legal</HashLink>
+                        </li>
+
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#about" >Terms </HashLink>
+                        </li>
+
+                        <li className=' text-white py-1  '>
+                            <HashLink smooth to="#contactus" >Privacy Policy</HashLink>
+                        </li>
+                    </ul>
+
+                </div>
+                {/* 
                 <div className=' flex items-center  '>
                     <a className='text-white ' href="https://www.linkedin.com/company/eazi-thenga/">
                         <FaLinkedin />
@@ -29,10 +63,8 @@ const Footer = () => {
                         <FaTwitter />
                     </a>
 
-                </div>
-                </ul>
+                </div> */}
 
-                {/* whatsapp, Twitter: , LinkedIn:  */}
             </div>
         </div>
     );

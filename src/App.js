@@ -11,9 +11,9 @@ import Annually from "./components/pricing/Annually";
 
 
 
-
-import Login from "./views/Login";
 import SignUp from "./views/SignUp";
+import Main from "./views/Main";
+import ContactUs from "./components/ContactUs";
 
 
 
@@ -21,17 +21,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} >
-          <Route path="/" element={<Pricing />} >
-            <Route path="" element={<Monthly />} />
-            <Route path="annually" element={<Annually />} />
+        <Route path="/" element={<Main />} >
+          <Route path="/" element={<LandingPage />} >
+            <Route path="/" element={<Pricing />} >
+              <Route path="" element={<Monthly />} />
+              <Route path="annually" element={<Annually />} />
+            </Route>
           </Route>
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Route>
-
-
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -23,3 +23,16 @@ p {
     font-family: 'Poppins', sans-serif;
 
 }
+.signup{
+    background: url("./asset/image/signupbg.png") no-repeat center / cover ;
+}
+
+.text{
+    background: #FFC8A6;
+}
+.signup-text{
+    background: url("./asset/image/text.png") no-repeat center / cover ;
+}
+.sh{
+    box-shadow: 2px 2px 5px rgb(168, 168, 168);
+}

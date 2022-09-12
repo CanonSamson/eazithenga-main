@@ -35,7 +35,7 @@ const ContactUs = () => {
 
 
     return (
-        <div className=' px-5 bg-gray-50 relative pb-10'>
+        <div className=' px-5 bg-gray-50 relative pb-10 mt-[100px]'>
            
 
 
