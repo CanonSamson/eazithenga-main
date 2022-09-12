@@ -2,7 +2,7 @@
 import logo from '../asset/icon_svg/logo.png'
 
 //components
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link';
 import { useState } from 'react';
 
@@ -15,6 +15,23 @@ const NavBar = () => {
     const Toggler = () => {
         setToggle(!toggle)
     }
+    function NavLink({
+        to,
+        className,
+        activeClassName,
+        inActiveClassName,
+        ...rest
+    }) {
+
+        let location = useLocation();
+        let isActive = location.pathname === to;
+
+        let allClassNames =
+            className + (isActive ? ` ${activeClassName}` : `${inActiveClassName}`);
+        return <HashLink className={allClassNames} to={to} {...rest} />
+    }
+
+
 
     return (
         <div className=' relative'>
@@ -30,17 +47,17 @@ const NavBar = () => {
                     <div className=' text-orange' onClick={Toggler}>
                         <MdClose size={24} />
                     </div>
-                    <div className=' flex flex-col justify-center m-auto items-center text-blue'>
-                        <HashLink onClick={Toggler} smooth to="/" className=' my-5'>Home</HashLink>
-                        <HashLink onClick={Toggler} smooth to="/#features" className=' my-5'>Features</HashLink>
+                    <div className=' flex flex-col justify-center m-auto items-center '>
+                        <NavLink onClick={Toggler} activeClassName="text-orange  " inActiveClassName="text-blue my-5" smooth to="/" className='my-5'>Home</NavLink>
+                        <HashLink onClick={Toggler} smooth  to="/#features" className=' my-5'>Features</HashLink>
 
                         <HashLink onClick={Toggler} smooth to="/#pricing" className=' my-5'>Pricing</HashLink>
 
-                        <HashLink onClick={Toggler} smooth to="/contact" className=' my-5'>Contact</HashLink>
-                        <Link  onClick={Toggler} to="/signup#signup" className='  justify-center  mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <NavLink onClick={Toggler} activeClassName="text-orange" inActiveClassName="text-blue" smooth to="/contact#contact" className=' my-5'>Contact</NavLink>
+                        <HashLink onClick={Toggler} to="/signup#signup" className='  justify-center  mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get Started</button>
-                        </Link>
+                        </HashLink>
                     </div>
                 </div>
                 <div onClick={Toggler} className={`${toggle ? "flex" : "hidden"} w-full h-[100%] z-30 bg-black/30 blur-sm fixed top-0 left-0`}></div>
@@ -54,15 +71,15 @@ const NavBar = () => {
                 <nav className='flex h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
                     <img className=' w-32' src={logo} alt="logo" />
                     <div className=' flex  items-center  justify-between text-blue'>
-                        <Link className="mx-4" smooth to="/" >Home</Link>
-                        <HashLink className="mx-4" smooth to="/contact" >Contact</HashLink>
-                        <HashLink className="mx-4" smooth to="/#pricing" >Pricing</HashLink>
-                        <HashLink className="mx-4" smooth to="/#features" >Features</HashLink>
+                        <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/" >Home</NavLink>
+                        <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/contact" >Contact</NavLink>
+                        <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/#pricing" >Pricing</NavLink>
+                        <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/#features" >Features</NavLink>
 
-                        <Link to="/signup" className='  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <HashLink to="/signup#signup" className='  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Sign Up</button>
-                        </Link>
+                        </HashLink>
 
                     </div>
                 </nav>

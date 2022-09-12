@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import { MdPhone, MdFmdGood, MdEmail } from "react-icons/md";
+import { MdPhone, MdFmdGood, MdEmail, MdArrowCircleUp  } from "react-icons/md";
+import { HashLink } from 'react-router-hash-link';
 
 const Main = () => {
-    return ( 
-        <div>
+    return (
+        <div className=" relative">
+            <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-50">
+                <MdArrowCircleUp />
+            </HashLink>
             <NavBar />
             <Outlet />
 
@@ -52,7 +56,7 @@ const Main = () => {
 
             <Footer />
         </div>
-     );
+    );
 }
- 
+
 export default Main;

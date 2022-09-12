@@ -35,15 +35,15 @@ const ContactUs = () => {
 
 
     return (
-        <div className=' px-5 bg-gray-50 relative pb-10 mt-[100px]'>
-           
+        <div className=' px-5 bg-gray-50 relative pb-10 mt-[30px]'>
+                       <div id="contact" className=" w-full h-[60px] "></div>
 
 
             <div>
                 <div className=' mt-10 flex flex-col justify-center items-center'>
                     <h1 className=' font-bold text-2xl text-center'>Contact Us</h1>
                 </div>
-                
+
                 <div className=' flex flex-col Btablet:flex-row justify-around tablet:mt-20 items-center ' >
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[500px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid">

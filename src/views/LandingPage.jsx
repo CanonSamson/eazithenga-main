@@ -1,6 +1,5 @@
 
 //icons
-import { MdArrowCircleUp } from "react-icons/md";
 import { BsCart3 } from 'react-icons/bs'
 import { IoCheckmarkDoneCircle } from 'react-icons/io5'
 
@@ -18,7 +17,6 @@ import cb from '../asset/icon_svg/cb.png'
 
 
 import { Outlet } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 
 
@@ -53,9 +51,6 @@ const LandingPage = () => {
             <img className=" absolute  right-10 top-[450px]" src={cb} alt="" />
           
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
-                <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-50">
-                    <MdArrowCircleUp />
-                </HashLink>
                 <section className=" Btablet:flex items-center justify-around relative ">
 
                     <div>
