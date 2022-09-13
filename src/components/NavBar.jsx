@@ -37,7 +37,9 @@ const NavBar = () => {
         <div className=' relative'>
             <nav id='nav' className='Btablet:hidden'>
                 <div className='flex h-[60px]  justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
-                    <img className=' w-32' src={logo} alt="logo" />
+                    <Link to="/" >
+                        <img className=' w-32' src={logo} alt="logo" />
+                    </Link>
                     <div onClick={Toggler} className="text-orange">
                         <MdMenu size={24} />
                     </div>
@@ -67,7 +69,9 @@ const NavBar = () => {
             {/* web view */}
             <div className=' hidden Btablet:block'>
                 <nav className='flex h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
-                    <img className=' w-32' src={logo} alt="logo" />
+                    <Link to="/" >
+                        <img className=' w-32' src={logo} alt="logo" />
+                    </Link>
                     <div className=' flex  items-center  justify-between text-blue'>
                         <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/" >Home</NavLink>
                         <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/contact" >Contact</NavLink>

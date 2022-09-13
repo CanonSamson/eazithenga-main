@@ -25,7 +25,7 @@ const Footer = () => {
                     <ul>
                         <li className=' my-4 text-blue'>About</li>
                         <li className=' my-4 text-white'>Why Us</li>
-                        <li className=' my-4 text-white'>Features</li>
+                        <li className=' my-4 text-white'> <HashLink  smooth to="/#features" >Features</HashLink></li>
                         <li className=' my-4 text-white'>Pricing</li>
                     </ul>
                     <ul>

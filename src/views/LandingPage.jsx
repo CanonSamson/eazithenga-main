@@ -18,6 +18,7 @@ import cb from '../asset/icon_svg/cb.png'
 
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 
 
 const LandingPage = () => {
@@ -57,10 +58,10 @@ const LandingPage = () => {
                         <h1 className=" text-4xl font-bold mb-2 mt-20 tablet:text-5xl">Selling Via Social<br />Media Made Easy</h1>
                         <p className="   ">Eazi Thenga helps small businesses set up online storefronts where you can showcase your products,
                             receive orders, chat customers and much more.</p>
-                        <Link to="/" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <HashLink smooth to="/signup#signup" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get Started</button>
-                        </Link>
+                        </HashLink>
                     </div>
 
                     <div className=" mt-10 flex justify-center">
