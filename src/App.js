@@ -14,6 +14,7 @@ import Annually from "./components/pricing/Annually";
 import SignUp from "./views/SignUp";
 import Main from "./views/Main";
 import ContactUs from "./components/ContactUs";
+import Login from "./views/Login";
 
 
 
@@ -29,6 +30,7 @@ function App() {
             </Route>
           </Route>
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/contact" element={<ContactUs />} />
         </Route>
         <Route path="*" element={<NotFound />} />

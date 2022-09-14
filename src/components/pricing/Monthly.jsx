@@ -4,6 +4,7 @@ import Button from "../Button";
 import { motion } from "framer-motion";
 
 import { IoCheckmarkCircleSharp, IoCloseCircleSharp } from 'react-icons/io5'
+import { Link } from 'react-router-dom';
 
 const Monthly = () => {
     return (
@@ -13,7 +14,7 @@ const Monthly = () => {
 
 
 
-                <div className="flex flex-col justify-center shadow-xl p-3 w-[320px] ml-5  relative h-[500px] rounded-xl">
+                    <div className="flex flex-col justify-center shadow-xl p-3 w-[320px] ml-5  relative h-[500px] rounded-xl">
                         <span className=' bg-blue p-5 text-white absolute right-0 top-0 rounded-tr-2xl  font-semibold text-3xl rounded-bl-xl'>Free</span>
                         <img className=' bg-orange p-1 w-10 mt-20 mb-2' src={basic} alt="" />
                         <span className=' font-semibold text-3xl my-3'>Basic</span>
@@ -47,7 +48,7 @@ const Monthly = () => {
                                 <p className='  text-blue text-xm'>Order Management</p>
                             </li>
                         </ul>
-                        <Button value="Get Started" link="" />
+                        <Button value="Get Started" link="/signup#signup" />
                     </div>
 
 
@@ -86,7 +87,9 @@ const Monthly = () => {
                                 <p className='  text-blue text-xm'>Order Management</p>
                             </li>
                         </ul>
-                        <Button value="Get Started" link="" />
+        
+                            <Button value="Get Started" link="/signup#signup" />
+           
                     </div>
 
 

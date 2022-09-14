@@ -146,7 +146,7 @@ const SignUp = () => {
                         <div className="  grid grid-cols-1 tablet:grid-cols-2 gap-5" >
                             {
                                 input.map((input) => (
-                                    <Input label={input.label}
+                                    <Input key={input.id} label={input.label}
                                         type={input.type}
                                         placeholder={input.placeholder}
                                         errorMessage={input.errorMessage}
@@ -162,7 +162,7 @@ const SignUp = () => {
                             <div className="  grid grid-cols-1 tablet:grid-cols-2  gap-5" >
                                 {
                                     Billinput.map((input) => (
-                                        <Input label={input.label}
+                                        <Input key={input.id} label={input.label}
                                             type={input.type}
                                             placeholder={input.placeholder}
                                             errorMessage={input.errorMessage}
@@ -181,7 +181,7 @@ const SignUp = () => {
                                 <label className=" flex my-2 text-lg">Store Url </label>
                                 <div className=" flex flex-col tablet:flex-row sh tablet:items-center">
                                     <a href="https://www.eazithenga.com" className="  bg-[#D9D9D9] tablet:p-3 text-blue tablet:mr-3">https://www.eazithenga.com/</a>
-                                    <input type="text" placeholder="Enter  Store Url" className=" p-2 target:p-0 main-input w-full  focus:outline-none relative
+                                    <input key={input.id} type="text" placeholder="Enter  Store Url" className=" p-2 target:p-0 main-input w-full  focus:outline-none relative
                                      bg-transparent z-20  "/>
                                 </div>
                                 <p className="error text-xs my-2 text-red-500"></p>
@@ -189,7 +189,7 @@ const SignUp = () => {
                             <div className="  grid grid-cols-1 tablet:grid-cols-2  gap-5" >
                                 {
                                     password.map((input) => (
-                                        <Input label={input.label}
+                                        <Input key={input.id} label={input.label}
                                             type={input.type}
                                             placeholder={input.placeholder}
                                             errorMessage={input.errorMessage}
@@ -202,7 +202,7 @@ const SignUp = () => {
                             </div>
                         </div>
                         <div className="flex items-center mt-10">
-                            <input className=" mr-3" type="checkbox" name="" id="" />
+                            <input key={input.id} className=" mr-3" type="checkbox" name="" id="" />
                             <p className=" text-blue">I have read and agree to the Terms of Service</p>
                         </div>
                         <button className=" p-4 my-10 bg-orange text-white rounded-r-xl w-[150px]">Submit</button>

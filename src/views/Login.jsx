@@ -6,6 +6,8 @@ import Input from "../components/Input";
 
 //images
 import logo from '../asset/icon_svg/logo.png'
+import lock from '../asset/icon_svg/lock.svg'
+import flag from '../asset/icon_svg/flag.svg'
 
 import { useState } from "react";
 
@@ -38,8 +40,12 @@ function Login() {
                     <h1 className=" text-2xl font-semibold mb-5">Log In</h1>
                     <div className="mb-4 gap-5 grid">
                         <Input type="tel"
-                            placeholder="WhatsApp Number"
+                            placeholder="60 07487 15"
                             name="whatsappNumber"
+                            label="WhatsApp Number"
+                            require="*"
+                            code="+27"
+                            icon={flag}
                             errorMessage="WhatsApp Number must be a vaild SF telephone number (11 digits), don't include +   "
                             value={formValues.whatsappNumber}
                             onChange={handleChange}
@@ -48,6 +54,8 @@ function Login() {
                         <Input type="password" placeholder="Password" name="password"
                             errorMessage="incorrect password pls try again"
                             value={formValues.password}
+                            lable="Password"
+                            icon={lock}
                             onChange={handleChange}
                             required pattern="^\d{11}$" />
                     </div>
