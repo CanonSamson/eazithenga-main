@@ -127,8 +127,8 @@ const SignUp = () => {
 
     ]
     return (
-        <div >
-            <div id="signup" className=' signup w-full h-[200px] tablet:h-[400px]'></div>
+        <div className=" pb-20" >
+            <div id="signup" className=' signup w-full h-[200px] tablet:h-[400px] '></div>
             <div className=" max-w-[900px] m-auto  ">
                 <div className=" mx-5  rounded-xl mt-[-70px] tablet:mt-[-200px] shadow-xl bg-white rounded-t-3xl">
                     <div className="text rounded-t-3xl  ">
