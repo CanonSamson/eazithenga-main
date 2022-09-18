@@ -157,7 +157,7 @@ const SignUp = () => {
                             }
 
                         </div>
-                        <div className=" mt-20">
+                        {/* <div className=" mt-20">
                             <h2 className=" font-semibold text-xl mb-5">Billing Address</h2>
                             <div className="  grid grid-cols-1 tablet:grid-cols-2  gap-5" >
                                 {
@@ -173,7 +173,7 @@ const SignUp = () => {
                                 }
 
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className=" mt-20">
                             <h2 className=" font-semibold text-xl mb-5">Additional Information</h2>
