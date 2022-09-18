@@ -98,11 +98,11 @@ const ContactUs = () => {
             <header id="contact" className=" z-1  pt-[60px] max-w-[1000px] relative m-auto   rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
                 <section className=" Btablet:flex items-center justify-around relative ">
 
-                    <div className=' z-20 relative'>
+                    <div className=' z-10 relative'>
                         <h1 className=" text-4xl font-bold mb-2 mt-20 tablet:text-5xl">Contact Us</h1>
                         <p className="  Stablet:w-[80%]  ">Tired of missing customers? With Eazi Thenga - you'll never miss one again! We help small businesses set up online storefront where you
                             can showcase your products, receive orders, chat customers and much more.</p>
-                        <HashLink smooth to="/signup#signup" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <HashLink smooth to="#GETINTOUCH" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get In Touch</button>
                         </HashLink>
@@ -110,15 +110,15 @@ const ContactUs = () => {
 
                     <div className=" mt-10 flex justify-center w-full">
 
-                        <img className='z-10 w-[100%]  opacity-30 Stablet:opacity-100 absolute Stablet:relative  top-[-10%]' src={data} alt="" />
+                        <img className='z-2 w-[100%]  opacity-30 Stablet:opacity-100 absolute Stablet:relative  top-[-10%]' src={data} alt="" />
                     </div>
                 </section>
             </header>
 
             <div>
+                <div id='GETINTOUCH' className=' w-full h-[60px]'></div>
 
-
-                <div className=' flex flex-col Btablet:flex-row justify-center mt-20 items-center relative z-30 ' >
+                <div className=' flex flex-col Btablet:flex-row justify-center items-center relative z-20 ' >
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[1000px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid  Stablet:grid-cols-2">
                             {
@@ -140,11 +140,9 @@ const ContactUs = () => {
                                     required pattern="cano" />
                             </div>
                         </div>
-                        <HashLink smooth to="/signup#signup" className='  justify-center w-[200px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded  border-orange sm:p-3 sm:px-10 mr-2' >
-                            <button >Send Message</button>
-                        </HashLink>
-
+                        <button className=" bg-orange text-white active:opacity-70 active:shadow-2xl
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 
+                     text-sm rounded  border-orange sm:p-3 sm:px-10 mr-2" >Send Message</button>
                     </form>
                 </div>
             </div>

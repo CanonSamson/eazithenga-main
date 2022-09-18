@@ -205,7 +205,7 @@ const SignUp = () => {
                             <input key={input.id} className=" mr-3" type="checkbox" name="" id="" />
                             <p className=" text-blue">I have read and agree to the Terms of Service</p>
                         </div>
-                        <button className=" p-4 my-10 bg-orange text-white rounded-r-xl w-[150px]">Submit</button>
+                        <button className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
                     </form>
                 </div>
             </div>
