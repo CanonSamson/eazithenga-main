@@ -60,7 +60,7 @@ const LandingPage = () => {
                         <p className="  Stablet:w-[80%]  ">Tired of missing customers? With Eazi Thenga - you'll never miss one again! We help small businesses set up online storefront where you
                             can showcase your products, receive orders, chat customers and much more.</p>
                         <HashLink smooth to="/signup#signup" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get Started</button>
                         </HashLink>
                     </div>

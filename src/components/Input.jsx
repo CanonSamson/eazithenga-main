@@ -1,11 +1,6 @@
-import { useState } from "react";
 
 const Input = (props) => {
-    const [focused, setFocused] = useState(false)
     const {label, icon, code,  require, errorMessage, onChange, id, ...inputProps } = props;
-    const handleFocus = (e) => {
-        setFocused(true);
-    }
     return (
         <div className=" relative  Btablet:py-0    ">
             <label className=" flex my-2 text-lg">{label} <p className=" text-red-600">{require}</p></label>
@@ -14,7 +9,7 @@ const Input = (props) => {
                 <p className="mx-2">{code}</p>
                 <input {...inputProps} onChange={onChange}
                     className=" main-input w-full p-3  focus:outline-none relative
-                    bg-transparent z-20  text-black" onBlur={handleFocus} required focused={focused.toString()} />
+                    bg-transparent z-20  text-black" />
             </div>
             <p className="error text-xs my-2 text-red-500">{errorMessage}</p>
         </div>
