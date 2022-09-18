@@ -16,7 +16,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className='flex flex-col text-2xl Stablet:flex-row  Stablet:col-span-4 justify-around'>
+                <div className='flex flex-col text-xl Stablet:flex-row  Stablet:col-span-4 justify-around'>
                     <ul>
                         <li className=' my-4 text-blue'>Quick Links</li>
                         <li className=' my-4 text-white'>FAQS</li>
