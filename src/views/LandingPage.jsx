@@ -47,10 +47,10 @@ const LandingPage = () => {
     ]
     return (
         <div className=" relative overflow-hidden">
-            <img className=" absolute opacity-30 top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />
+            <img className=" absolute opacity-80 top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />
             <img className=" absolute opacity-30  top-[600px] right-[-150px] overflow-hidden  " src={bg1} alt="" />
             <img className=" absolute top-[1500px] opacity-30  left-[-150px] overflow-hidden  " src={bg2} alt="" />
-            <img className=" absolute  right-10 top-[450px] opacity-30 " src={cb} alt="" />
+            <img className=" absolute  right-10 top-[450px] opacity-30" src={cb} alt="" />
 
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
                 <section className=" Btablet:flex items-center justify-around relative ">
