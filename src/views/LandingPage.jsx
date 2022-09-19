@@ -18,7 +18,6 @@ import picture from "../asset/image/picture.png"
 
 
 import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link'
 
 
@@ -53,32 +52,32 @@ const LandingPage = () => {
             <img className=" absolute  right-10 top-[450px] opacity-30" src={cb} alt="" />
 
             <header id="top" className=" z-1  pt-[100px] px-5 max-w-[1000px] relative m-auto  pb-20 rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
-                <section className=" Btablet:flex items-center justify-around relative ">
+                <section className=" Btablet:grid  grid-cols-2   items-center justify-around relative ">
 
                     <div>
-                        <h1 className=" text-4xl font-bold mb-2 mt-20 tablet:text-5xl">Selling Via Social<br />Media Made Easy</h1>
-                        <p className="  Stablet:w-[80%]  ">Tired of missing customers? With Eazi Thenga - you'll never miss one again! We help small businesses set up online storefront where you
+                        <h1 className=" text-4xl font-bold mb-2 Btablet:text-2xl Stablet:text-4xl mt-20 tablet:text-5xl">Selling Via Social<br />Media Made Easy</h1>
+                        <p className="  Stablet:text-xl   ">Tired of missing customers? With Eazi Thenga - you'll never miss one again! We help small businesses set up online storefront where you
                             can showcase your products, receive orders, chat customers and much more.</p>
                         <HashLink smooth to="/signup#signup" className='  justify-center w-[160px] mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get Started</button>
                         </HashLink>
                     </div>
+               
+                    <div className="  flex justify-center mt-10 Btablet:mt-0 ">
 
-                    <div className=" mt-10 flex justify-center">
-
-                        <div className=" w-full relative">
-                            <div className=" flex items-center bg-lblue text-blue absolute right-[-10px] top-16 p-4 ">
-                                <BsCart3 />
-                                <span className="ml-2">Get An Online Store</span>
-                            </div>
-                            <img className=" w-[400px] Btablet:w-[1200px] m-auto" src={hero} alt="hero" />
-
-                            <div className=" flex items-center bg-blue text-white absolute left-0 bottom-16 p-4 ">
+                        <div className=" relative  ">
+                            <div className=" flex items-center z-10 bg-blue text-white absolute left-0 bottom-16 p-4 ">
                                 <IoCheckmarkDoneCircle />
                                 <span className="ml-2">Get Orders Via Whatsapp</span>
                             </div>
+                            <img className=" w-[400px] z-4 Btablet:w-[350px]  relative m-auto" src={hero} alt="hero" />
+                            <div className=" flex items-center z-10 bg-lblue text-blue absolute right-[-10px] top-16 p-4 ">
+                                <BsCart3 />
+                                <span className="ml-2">Get An Online Store</span>
+                            </div>
                         </div>
+
                     </div>
                 </section>
             </header>
