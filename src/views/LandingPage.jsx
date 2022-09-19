@@ -4,7 +4,7 @@ import { BsCart3 } from 'react-icons/bs'
 import { IoCheckmarkDoneCircle } from 'react-icons/io5'
 
 //import imgs here
-import hero from '../asset/icon_svg/hero.svg'
+import hero from '../asset/icon_svg/hero.png'
 import online from '../asset/icon_svg/8.svg'
 import sell from '../asset/icon_svg/5.svg'
 import data from '../asset/icon_svg/4.svg'
