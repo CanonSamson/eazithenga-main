@@ -49,7 +49,7 @@ function Login() {
                             errorMessage="WhatsApp Number must be a vaild SF telephone number (11 digits), don't include +   "
                             value={formValues.whatsappNumber}
                             onChange={handleChange}
-                            required pattern="^\d{11}$" />
+                            pattern="^\d{11}$" />
 
                         <Input type="password" placeholder="Password" name="password"
                             errorMessage="incorrect password pls try again"
@@ -57,7 +57,7 @@ function Login() {
                             lable="Password"
                             icon={lock}
                             onChange={handleChange}
-                            required pattern="^\d{11}$" />
+                         pattern="^\d{11}$" />
                     </div>
                     <div className="flex items-center justify-between">
                         <Button value=" LogIn" link="" />

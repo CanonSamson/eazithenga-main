@@ -3,17 +3,13 @@
 @tailwind utilities;
 
 
-/* 
-.main-input:valid~.text-input,
-.main-input:focus~.text-input {
-    @apply text-black bg-white transform -translate-y-0 z-30 translate-x-[60%]
-} */
 
-.error {
+
+pre {
     display: none;
 }
 
-.main-input:invalid[focused="true"]~.error {
+input:invalid ~ pre {
     display: block;
 
 }

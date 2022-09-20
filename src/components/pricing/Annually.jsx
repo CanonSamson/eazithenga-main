@@ -45,7 +45,7 @@ const Annually = () => {
                                 <p className='  text-blue text-xm'>Order Management</p>
                             </li>
                         </ul>
-                        <Button value="Get Started" link="/signup#signup" />
+                        <Button value="Get Started" link="/signup" />
                     </div>
 
 
@@ -83,7 +83,7 @@ const Annually = () => {
                                 <p className='  text-blue text-xm'>Order Management</p>
                             </li>
                         </ul>
-                        <Button value="Get Started" link="/signup#signup" />
+                        <Button value="Get Started" link="/signup" />
                     </div>
 
 

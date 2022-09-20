@@ -1,12 +1,11 @@
-
+import { useState } from "react";
+import { db } from "../firebase-config"
+import { collection, addDoc } from "firebase/firestore"
 
 //components
-import Button from './Button';
 import Input from './Input';
 import Textarea from './Textarea';
 
-//images
-import contact from '../asset/icon_svg/6.svg'
 
 //icons
 import profile from '../asset/icon_svg/profile.svg'
@@ -15,11 +14,9 @@ import flag from '../asset/icon_svg/flag.svg'
 import data from '../asset/icon_svg/datas.svg'
 
 import bg from '../asset/icon_svg/bg.png'
-import bg1 from '../asset/icon_svg/bg1.png'
-import bg2 from '../asset/icon_svg/bg2.png'
-import cb from '../asset/icon_svg/cb.png'
 
-import { useState } from 'react';
+
+
 import { HashLink } from 'react-router-hash-link';
 
 const ContactUs = () => {
@@ -38,69 +35,36 @@ const ContactUs = () => {
         setFormValues({ ...formValues, [name]: value })
         console.log(formValues)
     }
-    const handleSubmit = (e) => {
-        e.prevemtDefault();
+
+
+
+    const [newName, setNewName] = useState("");
+    const [newWhatsappNum, setNewWhatsappNum] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [newSubject, setNewSubject] = useState("");
+    const [newMessage, setNewMessage] = useState("");
+
+    const usersCollectionRef = collection(db, "messages")
+
+    const createMessage = async () => {
+
+        await addDoc(usersCollectionRef, {
+            name: newName,
+            email: newEmail, whatsappname: newWhatsappNum,
+            subject: newSubject, message: newMessage
+        })
     }
-
-    const input = [
-        {
-            id: 1,
-            errorMessage: "Name should be 3-16 characters and shouldn't include any special character!",
-            name: "name",
-            label: '',
-            placeholder: 'Name',
-            icon: profile,
-            require: '',
-            pattern: "canon",
-            type: 'text',
-            required: true,
-            // ^[A-Z-a-z0-9]{3,16}$
-
-        },
-
-        {
-            id: 2,
-            label: '',
-            name: 'email',
-            placeholder: 'example@email.com',
-            icon: email,
-            require: '',
-            errorMessage: '',
-            pattern: '',
-            type: 'email'
-
-        },
-        {
-            id: 3,
-            label: ' ',
-            name: 'whatsappNumber',
-            value: 'whatsappNumber',
-            placeholder: '60 07487 15',
-            icon: flag,
-            require: '',
-            code: "+27",
-            errorMessage: '',
-            pattern: "^\d{11}$",
-            type: 'tel'
-        },
-        {
-            id: 4,
-            label: ' ',
-            name: 'subject',
-            placeholder: 'Subject',
-            icon: "",
-            require: '',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
-        },
-    ]
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        createMessage()
+    }
 
     return (
         <div className=' px-5  relative pb-10 mt-[30px]  overflow-hidden'>
-            <img className=" absolute opacity-80 top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />      
+            <img className=" absolute opacity-80 top-0 right-[-100px] overflow-hidden  " src={bg} alt="" />
 
-            <header id="contact" className=" z-1  pt-[60px] max-w-[1000px] relative m-auto   rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
+            <header className=" z-1  pt-[60px] max-w-[1000px] relative m-auto   rounded-br-3xl  flex justify-center items-center flex-col Btablet:flex-row sm:flex-row ">
                 <section className=" Btablet:flex items-center justify-around relative ">
 
                     <div className=' z-10 relative Stablet:w-[45%]'>
@@ -126,21 +90,42 @@ const ContactUs = () => {
                 <div className=' flex flex-col Btablet:flex-row justify-center items-center relative z-20 ' >
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[1000px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid  Stablet:grid-cols-2">
-                            {
-                                input.map((input) => (
-                                    <Input key={input.id}
-                                        {...input}
-                                        onChange={handleChange}
-                                        value={formValues[input.value]} />
-                                ))
-                            }
+
+                            <Input label="Name"
+                                type="text"
+                                placeholder="Name"
+                                errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
+                                require="*"
+                                icon={profile} onChange={(e) => { setNewName(e.target.value) }}
+                    />
+
+                            <Input label="Email Address"
+                                type="text"
+                                placeholder="example@email.com"
+                                errorMessage=""
+                                require=""
+                                icon={email} onChange={(e) => { setNewEmail(e.target.value) }} />
+
+                            <Input label="Whatsapp Number"
+                                type="tel"
+                                code="+27"
+                                placeholder="60 07487 15"
+                                errorMessage=" you number m"
+                                pattern="^\d{11}$"
+                                require="*"
+                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} />
+
+                            <Input label="Subject"
+                                type="text"
+                                placeholder="subject"
+                                errorMessage=""
+                                require="*"
+                                icon="" onChange={(e) => { setNewSubject(e.target.value) }} />
 
                             <div className=' Stablet:col-span-2'>
                                 <Textarea placeholder="Write Your Message"
-                                    name="message" value={formValues.message}
-                                    onChange={handleChange}
-                                    errorMessage="canon di"
-                                    required pattern="cano" />
+                                    name="message"
+                                    onChange={(e) => { setNewMessage(e.target.value) }} />
                             </div>
                         </div>
                         <button className=" bg-orange text-white active:opacity-70 active:shadow-2xl

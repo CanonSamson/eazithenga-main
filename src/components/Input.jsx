@@ -1,6 +1,6 @@
-
+import '../index.css'
 const Input = (props) => {
-    const {label, icon, code,  require, errorMessage, onChange, id, ...inputProps } = props;
+    const { label, icon, code, require, errorMessage, onChange, id, ...inputProps } = props;
     return (
         <div className=" relative  Btablet:py-0    ">
             <label className=" flex my-2 text-lg">{label} <p className=" text-red-600">{require}</p></label>
@@ -8,10 +8,10 @@ const Input = (props) => {
                 <img className="w-[24px]" src={icon} alt="" />
                 <p className="mx-2">{code}</p>
                 <input {...inputProps} onChange={onChange}
-                    className=" main-input w-full p-3  focus:outline-none relative
-                    bg-transparent z-20  text-black" />
+                    className=" w-full p-3  focus:outline-none relative
+                    bg-transparent z-20  text-black" required />
             </div>
-            <p className="error text-xs my-2 text-red-500">{errorMessage}</p>
+            <pre >{errorMessage}</pre>
         </div>
     );
 }

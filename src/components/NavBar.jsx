@@ -53,8 +53,8 @@ const NavBar = () => {
                         <NavLink onClick={Toggler} activeClassName="text-orange  " inActiveClassName="text-blue my-5" smooth to="/" className='my-5'>Home</NavLink>
                         <HashLink onClick={Toggler} smooth to="/#features" className=' my-5'>Features</HashLink>
                         <HashLink onClick={Toggler} smooth to="/#pricing" className=' my-5'>Pricing</HashLink>
-                        <NavLink onClick={Toggler} activeClassName="text-orange" inActiveClassName="text-blue" smooth to="/contact#contact" className=' my-5'>Contact</NavLink>
-                        <HashLink onClick={Toggler} to="/signup#signup" className='  justify-center  mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <NavLink onClick={Toggler} activeClassName="text-orange" inActiveClassName="text-blue" smooth to="/contact" className=' my-5'>Contact</NavLink>
+                        <HashLink onClick={Toggler} to="/signup" className='  justify-center  mt-5 flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      `active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Get Started</button>
                         </HashLink>
@@ -76,7 +76,7 @@ const NavBar = () => {
                         <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/#pricing" >Pricing</NavLink>
                         <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/#features" >Features</NavLink>
 
-                        <HashLink to="/signup#signup" className='  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                        <HashLink to="/signup" className='  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Sign Up</button>
                         </HashLink>

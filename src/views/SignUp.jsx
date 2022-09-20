@@ -2,133 +2,43 @@ import Input from "../components/Input";
 import profile from '../asset/icon_svg/profile.svg'
 import email from '../asset/icon_svg/email.svg'
 import flag from '../asset/icon_svg/flag.svg'
-import address from '../asset/icon_svg/address.svg'
-import bag from '../asset/icon_svg/bag.svg'
 import lock from '../asset/icon_svg/lock.svg'
 
+import { useState } from "react";
+import { db } from "../firebase-config"
+import { collection, addDoc } from "firebase/firestore"
+
 const SignUp = () => {
-    const input = [
-        {
-            id: 1,
-            label: 'Frist Name',
-            placeholder: 'Frist Name',
-            icon: profile,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
 
-        },
-        {
-            id: 2,
-            label: 'Last Name',
-            placeholder: 'Last Name',
-            icon: profile,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
+    const [newFirstName, setNewFirstName] = useState("");
+    const [newWhatsappNum, setNewWhatsappNum] = useState("");
+    const [newEmail, setNewEmail] = useState("");
+    const [newLastName, setNewLastName] = useState("");
+    const [newPassword, setNewPassword] = useState("");
 
-        },
-        {
-            id: 3,
-            label: 'Email ',
-            placeholder: 'example@email.com',
-            icon: email,
-            require: '',
-            errorMessage: '',
-            pattern: '',
-            type: 'email'
+    const [NewStoreName, setNewStoreName] = useState("");
 
-        },
-        {
-            id: 4,
-            label: 'Whatsapp Number ',
-            placeholder: '60 07487 15',
-            icon: flag,
-            require: '*',
-            code: "+27",
-            errorMessage: '',
-            pattern: '',
-            type: 'tel'
-        },
-    ]
 
-    const Billinput = [
-        {
-            id: 1,
-            label: 'Business Name ',
-            placeholder: 'Enter  Business Name',
-            icon: bag,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
+    const usersCollectionRef = collection(db, "stores")
 
-        },
-        {
-            id: 2,
-            label: 'Street Address',
-            placeholder: 'Street Address',
-            icon: address,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
+    const createName = async () => {
+        await addDoc(usersCollectionRef, {
+            firstname: newFirstName,
+            lastname: newLastName,
+            email: newEmail, 
+            whatsappname: newWhatsappNum,
+            storename: NewStoreName,
+            password : newPassword
+        })
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        createName()
+    }
 
-        },
-        {
-            id: 3,
-            label: 'State',
-            placeholder: 'example@email.com',
-            icon: email,
-            require: '',
-            errorMessage: '',
-            pattern: '',
-            type: 'text'
-
-        },
-        {
-            id: 4,
-            label: 'Phone Number  ',
-            placeholder: '60 07487 15',
-            icon: flag,
-            require: '*',
-            code: "+27",
-            errorMessage: '',
-            pattern: '',
-            type: 'tel'
-        },
-    ]
-
-    const password = [
-        {
-            id: 1,
-            label: 'Choose Password',
-            placeholder: 'Choose A Password',
-            icon: lock,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'password'
-
-        },
-        {
-            id: 2,
-            label: 'Confirm Password',
-            placeholder: 'Confirm Password',
-            icon: lock,
-            require: '*',
-            errorMessage: '',
-            pattern: '',
-            type: 'password'
-
-        },
-
-    ]
     return (
         <div className=" pb-20" >
-            <div id="signup" className=' signup w-full h-[200px] tablet:h-[400px] '></div>
+            <div className=' signup w-full h-[200px] tablet:h-[400px] '></div>
             <div className=" max-w-[900px] m-auto  ">
                 <div className=" mx-5  rounded-xl mt-[-70px] tablet:mt-[-200px] shadow-xl bg-white rounded-t-3xl">
                     <div className="text rounded-t-3xl  ">
@@ -141,39 +51,43 @@ const SignUp = () => {
                         <h1 className=" mb-5 ml-5 text-2xl font-bold mt-10 pb-2 w-[100px] ">Sign Up</h1>
                         <span className=" w-[60px] top-10 h-[10px] bg-orange absolute left-5"></span>
                     </div>
-                    <form className="p-5 " action="">
+                    <form onSubmit={handleSubmit } className="p-5 " action="">
                         <h2 className=" font-semibold text-xl ">Personal Information</h2>
                         <div className="  grid grid-cols-1 tablet:grid-cols-2 gap-5" >
-                            {
-                                input.map((input) => (
-                                    <Input key={input.id} label={input.label}
-                                        type={input.type}
-                                        placeholder={input.placeholder}
-                                        errorMessage={input.errorMessage}
-                                        pattern={input.pattern}
-                                        require={input.require}
-                                        icon={input.icon} code={input.code} />
-                                ))
-                            }
+
+                            <Input label="First Name"
+                                type="text"
+                                placeholder="Name"
+                                errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
+                                require="*"
+                                icon={profile} onChange={(e) => { setNewFirstName(e.target.value) }} required
+                            />
+                            <Input label="First Name"
+                                type="text"
+                                placeholder="Last Name"
+                                errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
+                                require="*"
+                                icon={profile} onChange={(e) => { setNewLastName(e.target.value) }} required
+                            />
+
+                            <Input label="Email Address"
+                                type="text"
+                                placeholder="example@email.com"
+                                errorMessage=""
+                                require=""
+                                icon={email} onChange={(e) => { setNewEmail(e.target.value) }} />
+
+                            <Input label="Whatsapp Number"
+                                type="tel"
+                                code="+27"
+                                placeholder="60 07487 15"
+                                errorMessage=""
+                                pattern="^\d{11}$"
+                                require="*"
+                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} />
 
                         </div>
-                        {/* <div className=" mt-20">
-                            <h2 className=" font-semibold text-xl mb-5">Billing Address</h2>
-                            <div className="  grid grid-cols-1 tablet:grid-cols-2  gap-5" >
-                                {
-                                    Billinput.map((input) => (
-                                        <Input key={input.id} label={input.label}
-                                            type={input.type}
-                                            placeholder={input.placeholder}
-                                            errorMessage={input.errorMessage}
-                                            pattern={input.pattern}
-                                            require={input.require}
-                                            icon={input.icon} code={input.code} />
-                                    ))
-                                }
-
-                            </div>
-                        </div> */}
+    
 
                         <div className=" mt-20">
                             <h2 className=" font-semibold text-xl mb-5">Additional Information</h2>
@@ -181,31 +95,36 @@ const SignUp = () => {
                                 <label className=" flex my-2 text-lg">Store Url </label>
                                 <div className=" flex flex-col tablet:flex-row sh tablet:items-center">
                                     <a href="https://www.eazithenga.com" className="  bg-[#D9D9D9] tablet:p-3 text-blue tablet:mr-3">https://www.eazithenga.com/</a>
-                                    <input key={input.id} type="text" placeholder="Enter  Store Url" className=" p-2 target:p-0 main-input w-full  focus:outline-none relative
-                                     bg-transparent z-20  "/>
+                                    <input type="text" placeholder="Enter  Store Url" className=" p-2 target:p-0 main-input w-full  focus:outline-none relative
+                                     bg-transparent z-20   " onChange={(e) => { setNewStoreName(e.target.value) }} />
                                 </div>
                                 <p className="error text-xs my-2 text-red-500"></p>
                             </div>
                             <div className="  grid grid-cols-1 tablet:grid-cols-2  gap-5" >
-                                {
-                                    password.map((input) => (
-                                        <Input key={input.id} label={input.label}
-                                            type={input.type}
-                                            placeholder={input.placeholder}
-                                            errorMessage={input.errorMessage}
-                                            pattern={input.pattern}
-                                            require={input.require}
-                                            icon={input.icon} code={input.code} />
-                                    ))
-                                }
+
+                                <Input label="Password"
+                                    type="password"
+                                    placeholder="Password"
+                                    errorMessage=""
+
+                                    require="*"
+                                    icon={lock} onChange={(e) => { setNewPassword(e.target.value) }} />
+
+                                <Input label="Confirm Password"
+                                    type="password"
+                                    placeholder="Confirm Password"
+                                    errorMessage=""
+                                    require="*"
+                                    icon={lock} />
+
 
                             </div>
                         </div>
                         <div className="flex items-center mt-10">
-                            <input key={input.id} className=" mr-3" type="checkbox" name="" id="" />
+                            <input className=" mr-3" type="checkbox" name="" id="" />
                             <p className=" text-blue">I have read and agree to the Terms of Service</p>
                         </div>
-                        <button className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
+                        <button  className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
                     </form>
                 </div>
             </div>
