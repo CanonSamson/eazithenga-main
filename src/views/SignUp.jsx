@@ -139,7 +139,7 @@ const SignUp = () => {
                         <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
                             <IoCheckmarkCircleSharp size={70} />
                         </div>
-                        <h1 className=" text-4xl font-semibold ">THANK YOU</h1>
+                        <h1 className=" text-2xl Stablet:text-4xl font-semibold ">THANK YOU</h1>
                         <p className=" text-center my-5">We've received your submission and we'll be in touch soon!</p>
                         <Link to="/">
                             <button className=" bg-orange text-white active:opacity-70 active:shadow-2xl

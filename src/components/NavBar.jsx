@@ -43,7 +43,6 @@ const NavBar = () => {
                     <div onClick={Toggler} className="text-orange">
                         <MdMenu size={24} />
                     </div>
-
                 </div>
                 <div className={`${toggle ? "flex top-0 h-[320px]" : "flex top-[-1000%] h-[10px]"} duration-300 fixed right-0 w-[70%] z-50 bg-white p-5 rounded-br-xl shadow-xl h-screen`}>
                     <div className=' text-orange' onClick={Toggler}>
@@ -62,7 +61,6 @@ const NavBar = () => {
                 </div>
                 <div onClick={Toggler} className={`${toggle ? "flex" : "hidden"} w-full h-[100%] z-30 bg-black/30 blur-sm fixed top-0 left-0`}></div>
             </nav>
-
 
             {/* web view */}
             <div className=' hidden Btablet:block'>
