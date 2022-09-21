@@ -6,7 +6,7 @@ import { collection, addDoc } from "firebase/firestore"
 import Input from './Input';
 import Textarea from './Textarea';
 
-
+import { IoCheckmarkCircleSharp } from 'react-icons/io5'
 //icons
 import profile from '../asset/icon_svg/profile.svg'
 import email from '../asset/icon_svg/email.svg'
@@ -18,8 +18,13 @@ import bg from '../asset/icon_svg/bg.png'
 
 
 import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom";
 
 const ContactUs = () => {
+    const [submit, setSubmit] = useState(false)
+    const Popup = () => {
+        setSubmit(!submit)
+    }
     const initialValues = {
         name: '',
         email: '',
@@ -34,6 +39,7 @@ const ContactUs = () => {
         const { value, name } = e.target;
         setFormValues({ ...formValues, [name]: value })
         console.log(formValues)
+
     }
 
 
@@ -54,10 +60,11 @@ const ContactUs = () => {
             subject: newSubject, message: newMessage
         })
     }
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
         createMessage()
+        Popup()
     }
 
     return (
@@ -97,7 +104,7 @@ const ContactUs = () => {
                                 errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
                                 require="*"
                                 icon={profile} onChange={(e) => { setNewName(e.target.value) }}
-                    />
+                            />
 
                             <Input label="Email Address"
                                 type="text"
@@ -134,6 +141,24 @@ const ContactUs = () => {
                     </form>
                 </div>
             </div>
+            {
+                submit &&
+                <div className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
+                    <div className=" shadow-xl p-5 max-w-[500px]  bg-white pt-20 flex flex-col   justify-center items-center relative">
+                        <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
+                            <IoCheckmarkCircleSharp size={70} />
+                        </div>
+                        <h1 className=" text-4xl font-semibold ">THANK YOU</h1>
+                        <p className=" text-center my-5">We've received your submission and we'll be in touch soon!</p>
+                        <Link to="/">
+                            <button className=" bg-orange text-white active:opacity-70 active:shadow-2xl
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 
+                     text-sm rounded  border-orange sm:p-3 sm:px-10 " >KEEP EXPLORING</button>
+                        </Link>
+
+                    </div>
+                </div>
+            }
         </div>
     );
 }

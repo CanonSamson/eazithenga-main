@@ -6,9 +6,6 @@ import NotFound from "./views/NotFound";
 
 // imported store routes
 import Pricing from "./components/pricing/Pricing";
-import Monthly from "./components/pricing/Monthly";
-import Annually from "./components/pricing/Annually";
-
 
 
 import SignUp from "./views/SignUp";
@@ -30,10 +27,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} >
           <Route path="/" element={<LandingPage />} >
-            <Route path="/" element={<Pricing />} >
-              <Route path="" element={<Monthly />} />
-              <Route path="annually" element={<Annually />} />
-            </Route>
+            <Route path="/" element={<Pricing />} />
           </Route>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />

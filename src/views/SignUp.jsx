@@ -3,10 +3,11 @@ import profile from '../asset/icon_svg/profile.svg'
 import email from '../asset/icon_svg/email.svg'
 import flag from '../asset/icon_svg/flag.svg'
 import lock from '../asset/icon_svg/lock.svg'
-
 import { useState } from "react";
 import { db } from "../firebase-config"
 import { collection, addDoc } from "firebase/firestore"
+import { Link } from "react-router-dom";
+import { IoCheckmarkCircleSharp } from 'react-icons/io5'
 
 const SignUp = () => {
 
@@ -15,9 +16,11 @@ const SignUp = () => {
     const [newEmail, setNewEmail] = useState("");
     const [newLastName, setNewLastName] = useState("");
     const [newPassword, setNewPassword] = useState("");
-
     const [NewStoreName, setNewStoreName] = useState("");
-
+    const [submit, setSubmit] = useState(false)
+    const Popup = () => {
+        setSubmit(!submit)
+    }
 
     const usersCollectionRef = collection(db, "stores")
 
@@ -25,15 +28,16 @@ const SignUp = () => {
         await addDoc(usersCollectionRef, {
             firstname: newFirstName,
             lastname: newLastName,
-            email: newEmail, 
+            email: newEmail,
             whatsappname: newWhatsappNum,
             storename: NewStoreName,
-            password : newPassword
+            password: newPassword
         })
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         createName()
+        Popup()
     }
 
     return (
@@ -51,7 +55,7 @@ const SignUp = () => {
                         <h1 className=" mb-5 ml-5 text-2xl font-bold mt-10 pb-2 w-[100px] ">Sign Up</h1>
                         <span className=" w-[60px] top-10 h-[10px] bg-orange absolute left-5"></span>
                     </div>
-                    <form onSubmit={handleSubmit } className="p-5 " action="">
+                    <form onSubmit={handleSubmit} className="p-5 " action="">
                         <h2 className=" font-semibold text-xl ">Personal Information</h2>
                         <div className="  grid grid-cols-1 tablet:grid-cols-2 gap-5" >
 
@@ -87,7 +91,7 @@ const SignUp = () => {
                                 icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} />
 
                         </div>
-    
+
 
                         <div className=" mt-20">
                             <h2 className=" font-semibold text-xl mb-5">Additional Information</h2>
@@ -124,10 +128,28 @@ const SignUp = () => {
                             <input className=" mr-3" type="checkbox" name="" id="" />
                             <p className=" text-blue">I have read and agree to the Terms of Service</p>
                         </div>
-                        <button  className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
+                        <button className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
                     </form>
                 </div>
             </div>
+            {
+                submit &&
+                <div className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
+                    <div className=" shadow-xl p-5 max-w-[500px]  bg-white pt-20 flex flex-col   justify-center items-center relative">
+                        <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
+                            <IoCheckmarkCircleSharp size={70} />
+                        </div>
+                        <h1 className=" text-4xl font-semibold ">THANK YOU</h1>
+                        <p className=" text-center my-5">We've received your submission and we'll be in touch soon!</p>
+                        <Link to="/">
+                            <button className=" bg-orange text-white active:opacity-70 active:shadow-2xl
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 
+                     text-sm rounded  border-orange sm:p-3 sm:px-10 " >KEEP EXPLORING</button>
+                        </Link>
+
+                    </div>
+                </div>
+            }
         </div>
     );
 }

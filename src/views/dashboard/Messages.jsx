@@ -4,7 +4,7 @@ import { MdDelete } from 'react-icons/md'
 
 import { useState, useEffect } from "react";
 import { db } from "../../firebase-config"
-import { collection, getDocs, addDoc } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 import { Link } from 'react-router-dom';
 const Messages = () => {
 
