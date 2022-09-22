@@ -16,7 +16,6 @@ import data from '../asset/icon_svg/datas.svg'
 import bg from '../asset/icon_svg/bg.png'
 
 
-
 import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 
@@ -31,14 +30,6 @@ const ContactUs = () => {
         whatsappNumber: '',
         subject: '',
         message: '',
-
-    }
-
-    const [formValues, setFormValues] = useState(initialValues)
-    const handleChange = (e) => {
-        const { value, name } = e.target;
-        setFormValues({ ...formValues, [name]: value })
-        console.log(formValues)
 
     }
 
@@ -98,13 +89,15 @@ const ContactUs = () => {
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[1000px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid  Stablet:grid-cols-2">
 
+
+
                             <Input label="Name"
                                 type="text"
                                 placeholder="Name"
                                 errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
                                 require="*"
                                 icon={profile} onChange={(e) => { setNewName(e.target.value) }}
-                            />
+                                required="true" />
 
                             <Input label="Email Address"
                                 type="text"
@@ -117,17 +110,17 @@ const ContactUs = () => {
                                 type="tel"
                                 code="+27"
                                 placeholder="60 07487 15"
-                                errorMessage=" you number m"
+                                errorMessage="Whatsapp Number should be a vaild SA number don't include + "
                                 pattern="^\d{11}$"
                                 require="*"
-                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} />
+                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} required="true" />
 
                             <Input label="Subject"
                                 type="text"
                                 placeholder="subject"
-                                errorMessage=""
+                                errorMessage="subject in required"
                                 require="*"
-                                icon="" onChange={(e) => { setNewSubject(e.target.value) }} />
+                                icon="" onChange={(e) => { setNewSubject(e.target.value) }} required="true"   />
 
                             <div className=' Stablet:col-span-2'>
                                 <Textarea placeholder="Write Your Message"

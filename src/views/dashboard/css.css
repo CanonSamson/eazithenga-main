@@ -1,0 +1,18 @@
+.ppre {
+    display: none;
+}
+
+.input:invalid[focused ="true"] ~ .ppre {
+    display: block;
+}
+.input:invalid[focused ="true"]  {
+    border:  1px solid red;
+}
+
+.pre {
+    display: none;
+}
+
+input:invalid[focused ="true"] ~ .pre{
+    display: block;
+}

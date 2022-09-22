@@ -62,16 +62,16 @@ const SignUp = () => {
                             <Input label="First Name"
                                 type="text"
                                 placeholder="Name"
-                                errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
+                                errorMessage="first name should be 3-16 characters and shouldn't include any special character!"
                                 require="*"
-                                icon={profile} onChange={(e) => { setNewFirstName(e.target.value) }} required
+                                icon={profile} onChange={(e) => { setNewFirstName(e.target.value) }} required="true"
                             />
                             <Input label="First Name"
                                 type="text"
                                 placeholder="Last Name"
-                                errorMessage="Name should be 3-16 characters and shouldn't include any special character!"
+                                errorMessage="last name should be 3-16 characters and shouldn't include any special character!"
                                 require="*"
-                                icon={profile} onChange={(e) => { setNewLastName(e.target.value) }} required
+                                icon={profile} onChange={(e) => { setNewLastName(e.target.value) }} required="true"
                             />
 
                             <Input label="Email Address"
@@ -85,10 +85,10 @@ const SignUp = () => {
                                 type="tel"
                                 code="+27"
                                 placeholder="60 07487 15"
-                                errorMessage=""
+                                errorMessage="Whatsapp Number should be a vaild SA number don't include + "
                                 pattern="^\d{11}$"
                                 require="*"
-                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }} />
+                                icon={flag} onChange={(e) => { setNewWhatsappNum(e.target.value) }}  required="true"/>
 
                         </div>
 
@@ -110,7 +110,6 @@ const SignUp = () => {
                                     type="password"
                                     placeholder="Password"
                                     errorMessage=""
-
                                     require="*"
                                     icon={lock} onChange={(e) => { setNewPassword(e.target.value) }} />
 

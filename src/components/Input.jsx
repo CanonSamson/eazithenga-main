@@ -1,17 +1,25 @@
-import '../index.css'
-const Input = (props) => {
-    const { label, icon, code, require, errorMessage, onChange, id, ...inputProps } = props;
+import { useState } from 'react'
+import '../views/dashboard/css.css'
+
+const Input = ({ label, code, onChange, icon, errorMessage, placeholder, required }) => {
+
+    const [focused, setFocused] = useState(false)
+    const handlef = () => {
+        setFocused(true)
+    }
+
     return (
         <div className=" relative  Btablet:py-0    ">
-            <label className=" flex my-2 text-lg">{label} <p className=" text-red-600">{require}</p></label>
-            <div className=" flex sh pl-3 py-1 items-center">
+            <label className=" flex my-3 text-lg">{label} <p className=" text-red-600">{require}</p></label>
+            <div className="main flex sh pl-3 py-1 w-full items-center">
                 <img className="w-[24px]" src={icon} alt="" />
                 <p className="mx-2">{code}</p>
-                <input {...inputProps} onChange={onChange}
-                    className=" w-full p-3  focus:outline-none relative
-                    bg-transparent z-20  text-black" required />
+                <input onChange={onChange}
+                    className=" w-full p-3 Minput  focus:outline-none relative
+                    bg-transparent z-20   text-black" placeholder={placeholder}
+                    onBlur={handlef} focused={focused.toString()} required={required} />
+                     <span className='pre absolute text-sm text-red-600 mb-[-100px] left-0 '>{errorMessage}</span>
             </div>
-            <pre >{errorMessage}</pre>
         </div>
     );
 }
