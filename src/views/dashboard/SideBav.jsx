@@ -11,11 +11,11 @@ const SideBav = () => {
                     <MdDashboard size={48} />
                     <span>OverView</span>
                 </Link>
-                <Link to="/dashboard/stores" className=' text-white  flex items-center py-4'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/stores" className=' text-white  flex items-center py-4'>
                     <MdStore size={48} />
                     <span>Stores</span>
                 </Link>
-                <Link to="/dashboard/messages" className=' text-white  flex items-center py-4'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/messages" className=' text-white  flex items-center py-4'>
                     <MdMessage size={48} />
                     <span>Message</span>
                 </Link>

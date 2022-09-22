@@ -18,7 +18,7 @@ const Input = ({ label, code, onChange, icon, errorMessage, placeholder, require
                     className=" w-full p-3 Minput  focus:outline-none relative
                     bg-transparent z-20   text-black" placeholder={placeholder}
                     onBlur={handlef} focused={focused.toString()} required={required} />
-                     <span className='pre absolute text-sm text-red-600 mb-[-100px] left-0 '>{errorMessage}</span>
+                     <span className='pre absolute text-[10px] text-red-600 mb-[-80px] left-0 '>{errorMessage}</span>
             </div>
         </div>
     );

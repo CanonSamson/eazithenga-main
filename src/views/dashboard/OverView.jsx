@@ -10,7 +10,7 @@ const OverView = () => {
                 <img className=' w-32' src={data} alt="" />
                 <div>
                     <h1 className=' text-4xl mb-3'>Eazi Thenga</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+                    <p className=' text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
                 </div>
             </div>
             <div className=' hidden Btablet:grid grid-cols-2 gap-4 px-5' >
@@ -29,13 +29,13 @@ const OverView = () => {
             </div>
             <div className=' Stablet:hidden px-5'>
                 <span>Notifications</span>
-                <Link to="/dashboard/stores" className=' bg-gray-200 p-5 flex items-center my-5'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/stores" className=' bg-gray-200 p-5 flex items-center my-5'>
                     <MdStore size={24} />
                     <div className=' ml-5'>
                         <h1 className=' text-xl mb-1'>Stores</h1>
                     </div>
                 </Link>
-                <Link to="/dashboard/messages" className=' bg-gray-200 p-5 flex items-center my-5'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/messages" className=' bg-gray-200 p-5 flex items-center my-5'>
                     <MdMessage size={24} />
                     <div className=' ml-5'>
                         <h1 className=' text-xl '>Messages</h1>
