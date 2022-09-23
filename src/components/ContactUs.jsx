@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { db } from "../firebase-config"
 import { collection, addDoc } from "firebase/firestore"
-
+import { motion } from 'framer-motion'
 //components
 import Input from './Input';
 import Textarea from './Textarea';
@@ -136,7 +136,7 @@ const ContactUs = () => {
             </div>
             {
                 submit &&
-                <div className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
+                <motion.div initial={{ }} className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
                     <div className=" shadow-xl p-5 max-w-[500px]  bg-white pt-20 flex flex-col   justify-center items-center relative">
                         <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
                             <IoCheckmarkCircleSharp size={70} />
@@ -150,7 +150,7 @@ const ContactUs = () => {
                         </Link>
 
                     </div>
-                </div>
+                </motion.div>
             }
         </div>
     );

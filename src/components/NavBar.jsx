@@ -44,7 +44,7 @@ const NavBar = () => {
                         <MdMenu size={24} />
                     </div>
                 </div>
-                <div className={`${toggle ? "flex top-0 h-[320px]" : "flex top-[-1000%] h-[10px]"} duration-300 fixed right-0 w-[70%] z-50 bg-white p-5 rounded-br-xl shadow-xl h-screen`}>
+                <div className={`${toggle ? "flex top-0 h-screen" : "flex top-[-1000%] h-[10px]"} duration-300 fixed right-0 w-[70%] z-50 bg-white p-5 rounded-br-xl shadow-xl h-screen`}>
                     <div className=' text-orange' onClick={Toggler}>
                         <MdClose size={24} />
                     </div>
