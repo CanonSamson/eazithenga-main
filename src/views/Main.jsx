@@ -5,22 +5,7 @@ import { MdPhone, MdFmdGood, MdEmail, MdArrowCircleUp  } from "react-icons/md";
 import { HashLink } from 'react-router-hash-link';
 
 const Main = () => {
-    // const address = [
-    //     {
-    //         id: 1,
-    //         tag: '',
-    //         header: 'Email Us:',
-    //         p: 'info@eazithenga.com',
-    //         link: 'mailto:info@eazithenga.com',
-    //     },
-    //     {
-    //         id: 2,
-    //         tag: '',
-    //         header: 'Email Us:',
-    //         p: 'info@eazithenga.com',
-    //         link: 'https://wa.link/483ix2',
-    //     },
-    // ]
+ 
     return (
         <div className=" relative">
             <HashLink smooth to="#top" className=" bg-orange p-5 rounded-full fixed bottom-5 right-5 text-white  z-50">

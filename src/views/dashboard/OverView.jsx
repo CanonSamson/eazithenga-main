@@ -9,7 +9,7 @@ const OverView = () => {
             <div className=' flex items-center  m-3  bg-white shadow-xl p-5 '>
                 <img className=' w-32' src={data} alt="" />
                 <div>
-                    <h1 className=' text-4xl mb-3'>Eazi Thenga</h1>
+                    <h1 className=' text-3xl mb-3'>Eazi Thenga</h1>
                     <p className=' text-sm'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
                 </div>
             </div>
@@ -27,15 +27,15 @@ const OverView = () => {
                     <button className=' py-2 text-white  bg-blue  rounded mt-5 px-5' >See More</button>
                 </div>
             </div>
-            <div className=' Stablet:hidden px-5'>
+            <div className=' Stablet:hidden px-5 min-h-screen'>
                 <span>Notifications</span>
-                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/stores" className=' bg-gray-200 p-5 flex items-center my-5'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcccccccwjfifdashboard/stores" className=' bg-gray-200 p-5 flex items-center my-5'>
                     <MdStore size={24} />
                     <div className=' ml-5'>
                         <h1 className=' text-xl mb-1'>Stores</h1>
                     </div>
                 </Link>
-                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc/messages" className=' bg-gray-200 p-5 flex items-center my-5'>
+                <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcccccccwjfifdashboard/messages" className=' bg-gray-200 p-5 flex items-center my-5'>
                     <MdMessage size={24} />
                     <div className=' ml-5'>
                         <h1 className=' text-xl '>Messages</h1>
