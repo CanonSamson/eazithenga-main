@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const OverView = () => {
     return (
-        <div className="">
+        <div className="min-h-screen">
             <div className=' flex items-center  m-3  bg-white shadow-xl p-5 '>
                 <img className=' w-32' src={data} alt="" />
                 <div>
@@ -27,7 +27,7 @@ const OverView = () => {
                     <button className=' py-2 text-white  bg-blue  rounded mt-5 px-5' >See More</button>
                 </div>
             </div>
-            <div className=' Stablet:hidden px-5 min-h-screen'>
+            <div className=' Stablet:hidden px-5 '>
                 <span>Notifications</span>
                 <Link to="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcccccccwjfifdashboard/stores" className=' bg-gray-200 p-5 flex items-center my-5'>
                     <MdStore size={24} />

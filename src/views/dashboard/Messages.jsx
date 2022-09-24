@@ -36,7 +36,7 @@ const Messages = () => {
                     :
 
                     <div className='  overflow-hidden pt-[100px]   bg-gray-100 '>
-                        <div className=' grid grid-cols-1 p-3  gap-5  '>
+                        <div className=' grid Stablet:grid-cols-2 grid-cols-1 p-3  gap-5  '>
                             {messages.map((message) => (
                                 <div key={message.id} className=' bg-white p-5  '>
                                     <div className=' flex items-center py-3'>

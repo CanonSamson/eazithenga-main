@@ -34,7 +34,6 @@ const ContactUs = () => {
     }
 
 
-
     const [newName, setNewName] = useState("");
     const [newWhatsappNum, setNewWhatsappNum] = useState("");
     const [newEmail, setNewEmail] = useState("");
@@ -88,9 +87,6 @@ const ContactUs = () => {
                 <div className=' flex flex-col Btablet:flex-row justify-center items-center relative z-20 ' >
                     <form onSubmit={handleSubmit} className="bg-white shadow-md max-w-[1000px] rounded px-5 pt-6 pb-8 mb-4 w-[100%]  ">
                         <div className="mb-4 gap-5 grid  Stablet:grid-cols-2">
-
-
-
                             <Input label="Name"
                                 type="text"
                                 placeholder="Name"
@@ -120,7 +116,7 @@ const ContactUs = () => {
                                 placeholder="subject"
                                 errorMessage="subject in required"
                                 require="*"
-                                icon="" onChange={(e) => { setNewSubject(e.target.value) }} required="true"   />
+                                icon="" onChange={(e) => { setNewSubject(e.target.value) }} required="true" />
 
                             <div className=' Stablet:col-span-2'>
                                 <Textarea placeholder="Write Your Message"
@@ -136,7 +132,7 @@ const ContactUs = () => {
             </div>
             {
                 submit &&
-                <motion.div initial={{ }} className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
+                <motion.div initial={{ opacity: 3, y: 100 }} animate={{ opacity: 100, y: 0 }} transition={{ duration: .35 }} className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
                     <div className=" shadow-xl p-5 max-w-[500px]  bg-white pt-20 flex flex-col   justify-center items-center relative">
                         <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
                             <IoCheckmarkCircleSharp size={70} />
@@ -148,7 +144,6 @@ const ContactUs = () => {
                      active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 
                      text-sm rounded  border-orange sm:p-3 sm:px-10 " >KEEP EXPLORING</button>
                         </Link>
-
                     </div>
                 </motion.div>
             }

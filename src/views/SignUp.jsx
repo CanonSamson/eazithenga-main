@@ -124,7 +124,7 @@ const SignUp = () => {
                             </div>
                         </div>
                         <div className="flex items-center mt-10">
-                            <input className=" mr-3" type="checkbox" name="" id="" />
+                            <input className=" mr-3" type="checkbox" name="" id="" required />
                             <p className=" text-blue">I have read and agree to the Terms of Service</p>
                         </div>
                         <button className=" p-4 my-10 bg-orange text-white rounded w-[170px]">Submit</button>
