@@ -4,7 +4,6 @@ import Button from "../Button";
 import { motion } from "framer-motion";
 
 import { IoCheckmarkCircleSharp, IoCloseCircleSharp } from 'react-icons/io5'
-import { Link } from 'react-router-dom';
 
 const Monthly = () => {
     return (
@@ -68,7 +67,7 @@ const Monthly = () => {
                             </li>
                             <li className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
-                                <p className='  text-blue text-xm'>Upload up to 10 products</p>
+                                <p className='  text-blue text-xm'>Upload up to 100 products</p>
                             </li>
                             <li className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
