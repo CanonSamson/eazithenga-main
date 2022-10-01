@@ -5,6 +5,17 @@ import { motion } from "framer-motion";
 
 import { IoCheckmarkCircleSharp, IoCloseCircleSharp } from 'react-icons/io5'
 
+const Anime = {
+    offS: {
+        y: 50, scale: 0, opacity: 0
+    },
+    onS: {
+        y: 0, scale: 1, opacity: 100
+    },
+    transition: {
+
+    }
+}
 const Monthly = () => {
     return (
         <div>
@@ -17,36 +28,36 @@ const Monthly = () => {
                         <span className=' bg-blue p-5 text-white absolute right-0 top-0 rounded-tr-2xl  font-semibold text-3xl rounded-bl-xl'>Free</span>
                         <img className=' bg-orange p-1 w-10 mt-20 mb-2' src={basic} alt="" />
                         <span className=' font-semibold text-3xl my-3'>Basic</span>
-                        <ul className=' mb-5 min-h-[200px]'>
-                            <li className=' flex items-center my-1'>
+                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount:1 }} transition={{ staggerChildren: 0.35 }} className=' mb-5 min-h-[200px]'>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Store Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Linked with Whatsapp Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Upload up to 10 products</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /> </div>
                                 <p className='  text-blue text-xm'>Linked with Facebook Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCloseCircleSharp /> </div>
                                 <p className='  text-blue text-xm'>Payment Gateway</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCloseCircleSharp /> </div>
                                 <p className='  text-blue text-xm'>Chat Automation</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCloseCircleSharp /> </div>
                                 <p className='  text-blue text-xm'>Order Management</p>
-                            </li>
-                        </ul>
+                            </motion.li>
+                        </motion.ul>
                         <Button value="Get Started" link="/signup" />
                     </div>
 
@@ -56,36 +67,36 @@ const Monthly = () => {
                         <span className=' bg-blue p-5 text-white absolute right-0 top-0 rounded-tr-2xl  font-semibold text-3xl rounded-bl-xl flex items-end'><p className=' text-xl'>R</p>200</span>
                         <img className=' bg-orange p-1 w-10 mt-20 mb-2' src={professional} alt="" />
                         <span className=' font-semibold text-3xl my-3'>Professional</span>
-                        <ul className=' mb-5 min-h-[200px]'>
-                            <li className=' flex items-center my-1'>
+                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount:1 }} transition={{ staggerChildren: 0.35 }} className=' mb-5 min-h-[200px]'>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Store Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Linked with Whatsapp Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Upload up to 100 products</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Linked with Facebook Catalog</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Payment Gateway</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Chat Automation</p>
-                            </li>
-                            <li className=' flex items-center my-1'>
+                            </motion.li>
+                            <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Order Management</p>
-                            </li>
-                        </ul>
+                            </motion.li>
+                        </motion.ul>
 
                         <Button value="Get Started" link="/signup" />
 

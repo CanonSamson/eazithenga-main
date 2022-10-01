@@ -14,6 +14,7 @@ import bg1 from '../asset/icon_svg/bg1.png'
 import bg2 from '../asset/icon_svg/bg2.png'
 import cb from '../asset/icon_svg/cb.png'
 import picture from "../asset/image/picture.png"
+import { motion } from "framer-motion";
 //icons
 
 
@@ -21,6 +22,17 @@ import { Outlet } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link'
 
 
+const Anime = {
+    offS: {
+        y: 200, scale: 0, opacity: 0
+    },
+    onS: {
+        y: 0, scale: 1, opacity: 100
+    },
+    transition: {
+    
+    }
+}
 const LandingPage = () => {
     const WhyChooseEazi = [
 
@@ -63,7 +75,7 @@ const LandingPage = () => {
                             <button >Get Started</button>
                         </HashLink>
                     </div>
-               
+
                     <div className="  flex justify-center mt-10 Btablet:mt-0 ">
 
                         <div className=" relative  ">
@@ -93,11 +105,13 @@ const LandingPage = () => {
                 <div className=" grid grid-cols-1 tablet:grid-cols-2 Btablet:grid-cols-3 gap-5 my-10">
                     {
                         WhyChooseEazi.map((text) => (
-                            <div key={text.id} className=" bg-white why shadow-xl p-5 mx-5 rounded-br-[50px] rounded-tl-[50px] min-h-[400px] laptop:min-w-[320px]">
-                                <img className=" h-40" src={text.icon} alt="" />
-                                <h4 className=" my-3 font-semibold text-xl">{text.header}</h4>
-                                <p>{text.describtion}</p>
-                            </div>
+                            <motion.div initial={"offS"} whileInView={"onS"} viewport={{once:false, amount:1 }} transition={{staggerChildren: 0.5}} key={text.id} className=" bg-white why shadow-xl p-5 mx-5 rounded-br-[50px] rounded-tl-[50px] min-h-[400px] laptop:min-w-[320px]">
+                                <motion.img variants={Anime} className=" h-40" src={text.icon} alt="" />
+                                <motion.h4 variants={Anime} className=" my-3 font-semibold text-xl">{text.header}</motion.h4>
+
+                                <motion.p  variants={Anime} > {text.describtion}</motion.p>
+
+                            </motion.div>
                         ))
                     }
                 </div>
