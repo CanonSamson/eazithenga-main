@@ -35,13 +35,17 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
         </Route>
         <Route path="*" element={<NotFound />} />
+
+        {/* dashboard routes */}
         <Route path="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcc" element={<Auth />} />
         <Route path="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcccccccwjfifdashboard" element={<DashboardRoute />} >
           <Route path="/120igaiscq9jq-4oqjfcof-=q0fq-kc;ckk3-fjwofkwvlefklf2-kf'alawk-fcokcccccccwjfifdashboard" element={<OverView />} />
           <Route path="stores" element={<Stores />} />
           <Route path="messages" element={<Messages />} />
         </Route>
+        
       </Routes>
+
     </BrowserRouter>
   );
 }

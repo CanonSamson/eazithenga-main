@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 
 const Anime = {
     offS: {
-        y: 50, scale: 0, opacity: 0
+        y: 20, scale: 0, opacity: 0
     },
     onS: {
         y: 0, scale: 1, opacity: 100
@@ -25,7 +25,6 @@ const Main = () => {
             </HashLink>
             <NavBar />
             <Outlet />
-
 
             <motion.section className=' bg-gray-100 pt-10  Btablet:grid grid-cols-3 m-auto'>
                 <motion.a initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: .8 }} transition={{ staggerChildren: 0.35 }} href='mailto:info@eazithenga.com' className=' flex flex-col justify-center min-w-300px m-5 bg-white py-20 '>

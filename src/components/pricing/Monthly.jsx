@@ -7,7 +7,7 @@ import { IoCheckmarkCircleSharp, IoCloseCircleSharp } from 'react-icons/io5'
 
 const Anime = {
     offS: {
-        y: 50, scale: 0, opacity: 0
+        y: 20, scale: 0, opacity: 0
     },
     onS: {
         y: 0, scale: 1, opacity: 100
