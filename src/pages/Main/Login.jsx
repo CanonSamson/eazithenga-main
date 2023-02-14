@@ -25,12 +25,6 @@ function Login() {
 
   return (
     <div>
-      <div className="flex justify-between items-center bg-white shadow-xl fixed top-0 z-30 w-full px-5 py-3">
-        <Link to="/">
-          <h1>Home</h1>
-        </Link>
-        <img className=" w-40" src={logo} alt="" />
-      </div>
       <div className=" p-5 h-screen w-full flex flex-col justify-center items-center">
         <span className=" bg-slate-100 w-10 h-10 text-xl absolute left-[10%] z-20 top-4 shadow-lg">
           {" "}
