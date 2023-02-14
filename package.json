@@ -1,11 +1,11 @@
 {
-  "name": "canaonn",
+  "name": "eazithenga-main",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "build",
     "preview": "vite preview"
   },
   "dependencies": {
