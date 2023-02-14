@@ -30,7 +30,7 @@ const Anime = {
         y: 0, scale: 1, opacity: 100
     },
     transition: {
-    
+
     }
 }
 const LandingPage = () => {
@@ -105,11 +105,11 @@ const LandingPage = () => {
                 <div className=" grid grid-cols-1 tablet:grid-cols-2 Btablet:grid-cols-3 gap-5 my-10">
                     {
                         WhyChooseEazi.map((text) => (
-                            <motion.div initial={"offS"} whileInView={"onS"} viewport={{once:false, amount:1 }} transition={{staggerChildren: .1}} key={text.id} className=" bg-white why shadow-xl p-5 mx-5 rounded-br-[50px] rounded-tl-[50px] min-h-[400px] laptop:min-w-[320px]">
+                            <motion.div initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: .5 }} transition={{ staggerChildren: .12 }} key={text.id} className=" bg-white why shadow-xl p-5 mx-5 rounded-br-[50px] rounded-tl-[50px] min-h-[400px] laptop:min-w-[320px]">
                                 <motion.img variants={Anime} className=" h-40" src={text.icon} alt="" />
                                 <motion.h4 variants={Anime} className=" my-3 font-semibold text-xl">{text.header}</motion.h4>
 
-                                <motion.p  variants={Anime} > {text.describtion}</motion.p>
+                                <motion.p variants={Anime} > {text.describtion}</motion.p>
 
                             </motion.div>
                         ))
@@ -118,11 +118,11 @@ const LandingPage = () => {
             </section>
 
 
-            <section className="  relative flex-col Stablet:flex-row flex justify-between items-center laptop:max-w-[1000px] m-auto pt-10 ">
-                <div className='  Stablet:hidden '>
-                    <h2 className=" text-2xl font-bold mx-5 text-center tablet:text-4xl">Why Choose Eazithenga</h2>
-                    <p className=" py-2 sm:pb-5 mx-5 tablet:text-xl text-center">Eazi Thenga specializes in digitizing your store for you. We will help you keep track of your customers, allow your customers to view all your products, their prices as well as order. With a professional, well designed storefront that can be set up in a matter of minutes; your business is live even while you’re offline</p>
-                </div>
+            <div className="  relative flex-col Stablet:flex-row flex justify-between items-center laptop:max-w-[1000px] m-auto pt-10 ">
+                <motion.div initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: .5 }} transition={{ staggerChildren: .12 }} className='  Stablet:hidden '>
+                    <motion.h2 variants={Anime} className=" text-2xl font-bold mx-5 text-center tablet:text-4xl">Why Choose Eazithenga</motion.h2>
+                    <motion.p variants={Anime} className=" py-2 sm:pb-5 mx-5 tablet:text-xl text-center">Eazi Thenga specializes in digitizing your store for you. We will help you keep track of your customers, allow your customers to view all your products, their prices as well as order. With a professional, well designed storefront that can be set up in a matter of minutes; your business is live even while you’re offline</motion.p>
+                </motion.div>
                 <div className=' relative  w-[80%] Stablet:w-[40%] m-auto'>
                     <img className="" src={picture} alt="" />
                     <img className=" absolute bottom-[16px] w-[40%] right-[-2%]" src={phone} alt="" />
@@ -131,7 +131,7 @@ const LandingPage = () => {
                     <h2 className=" text-xl Stablet:text-[25px] font-bold mx-5 text-right tablet:text-2xl">Why Choose Eazithenga</h2>
                     <p className=" py-2 sm:pb-5 mx-5 Stablet:text-lg tablet:text-xl text-right">Eazi Thenga specializes in digitizing your store for you. We will help you keep track of your customers, allow your customers to view all your products, their prices as well as order. With a professional, well designed storefront that can be set up in a matter of minutes; your business is live even while you’re offline</p>
                 </div>
-            </section>
+            </div>
             <div id="pricing" className=" w-full h-[60px]"></div>
             <Outlet />
 

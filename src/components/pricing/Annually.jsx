@@ -27,7 +27,7 @@ const Annually = () => {
                         <span className=' bg-blue p-5 text-white absolute right-0 top-0 rounded-tr-2xl  font-semibold text-3xl rounded-bl-xl flex items-end'><p className=' text-xl'>R</p>2000</span>
                         <img className=' bg-orange p-1 w-10 mt-20 mb-2' src={professional} alt="" />
                         <span className=' font-semibold text-3xl my-3'>Professional</span>
-                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: 1}} className=' mb-5 min-h-[200px]'>
+                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: .2 }} transition={{ staggerChildren: 0.12 }} className=' mb-5 min-h-[200px]'>
                             <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Store Catalog</p>
@@ -65,7 +65,7 @@ const Annually = () => {
                         <span className=' bg-blue p-5 text-white absolute right-0 top-0 rounded-tr-2xl  font-semibold text-3xl rounded-bl-xl'>Free</span>
                         <img className=' bg-orange p-1 w-10 mt-20 mb-2' src={basic} alt="" />
                         <span className=' font-semibold text-3xl my-3'>Basic</span>
-                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: 1}} className=' mb-5 min-h-[200px]'>
+                        <motion.ul initial={"offS"} whileInView={"onS"} viewport={{ once: false, amount: .2 }} transition={{ staggerChildren: 0.12 }} className=' mb-5 min-h-[200px]'>
                             <motion.li variants={Anime} className=' flex items-center my-1'>
                                 <div className=' text-orange mr-2'><IoCheckmarkCircleSharp /></div>
                                 <p className='  text-blue text-xm'>Store Catalog</p>
