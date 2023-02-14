@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore} from "@firebase/firestore"
-import FIREBASE_API_KEY  from "./.env"
+// import FIREBASE_API_KEY  from "./.env"
 const firebaseConfig = {
-    apiKey: FIREBASE_API_KEY ,
+    apiKey: "AIzaSyALlXhk-Bj11ukpLjiz97hNb2ffSuC_UdE" ,
     authDomain: "eazithenga.firebaseapp.com",
     projectId: "eazithenga",
     storageBucket: "eazithenga.appspot.com",

@@ -36,7 +36,7 @@ const NavBar = () => {
     return (
         <div className=' relative'>
             <nav id='nav' className='Btablet:hidden'>
-                <div className='flex h-[60px]  justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white'>
+                <div className='flex h-[60px]  justify-between items-center py-3 px-5  fixed top-5  left-0 w-[94%] mx-[3%] rounded-xl shadow-xl z-50 bg-white'>
                     <Link to="/" >
                         <img className=' w-32' src={logo} alt="logo" />
                     </Link>
@@ -61,6 +61,7 @@ const NavBar = () => {
                 </div>
                 <div onClick={Toggler} className={`${toggle ? "flex" : "hidden"} w-full h-[100%] z-30 bg-black/30 blur-sm fixed top-0 left-0`}></div>
             </nav>
+            
 
             {/* web view */}
             <div className=' hidden Btablet:block'>
@@ -75,7 +76,7 @@ const NavBar = () => {
                         <NavLink activeClassName="text-orange" inActiveClassName="text-blue mx-4" className="mx-4" smooth to="/#features" >Features</NavLink>
 
                         <HashLink to="/signup" className='  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-r-xl  border-orange sm:p-3 sm:px-10 mr-2' >
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-lg  border-orange sm:p-3 sm:px-10 mr-2' >
                             <button >Sign Up</button>
                         </HashLink>
 

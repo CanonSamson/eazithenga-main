@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
+import Footer from "../../components/Footer";
+import NavBar from "../../components/NavBar";
 import { MdPhone, MdFmdGood, MdEmail, MdArrowCircleUp } from "react-icons/md";
 import { HashLink } from 'react-router-hash-link';
 import { motion } from 'framer-motion'

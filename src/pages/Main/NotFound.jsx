@@ -1,5 +1,5 @@
-import data from '../asset/icon_svg/4.svg'
-import Button from '../components/Button';
+import data from '../../asset/icon_svg/4.svg'
+import Button from '../../components/Button';
 
 const NotFound = () => {
     return (

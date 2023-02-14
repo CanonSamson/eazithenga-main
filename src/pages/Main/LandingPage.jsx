@@ -4,16 +4,16 @@ import { BsCart3 } from 'react-icons/bs'
 import { IoCheckmarkDoneCircle } from 'react-icons/io5'
 
 //import imgs here
-import hero from '../asset/icon_svg/hero.png'
-import online from '../asset/icon_svg/8.svg'
-import sell from '../asset/icon_svg/5.svg'
-import data from '../asset/icon_svg/4.svg'
-import phone from '../asset/icon_svg/phone.svg'
-import bg from '../asset/icon_svg/bg.png'
-import bg1 from '../asset/icon_svg/bg1.png'
-import bg2 from '../asset/icon_svg/bg2.png'
-import cb from '../asset/icon_svg/cb.png'
-import picture from "../asset/image/picture.png"
+import hero from '../../asset/icon_svg/hero.png'
+import online from '../../asset/icon_svg/8.svg'
+import sell from '../../asset/icon_svg/5.svg'
+import data from '../../asset/icon_svg/4.svg'
+import phone from '../../asset/icon_svg/phone.svg'
+import bg from '../../asset/icon_svg/bg.png'
+import bg1 from '../../asset/icon_svg/bg1.png'
+import bg2 from '../../asset/icon_svg/bg2.png'
+import cb from '../../asset/icon_svg/cb.png'
+import picture from "../../asset/image/picture.png"
 import { motion } from "framer-motion";
 //icons
 
