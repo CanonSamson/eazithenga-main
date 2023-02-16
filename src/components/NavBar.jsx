@@ -6,15 +6,20 @@ import { FaHome, FaHubspot } from "react-icons/fa";
 import { Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { useState } from "react";
+import { useUserAuth } from "../Auth";
+import { CgProfile } from "react-icons/cg";
 
 //icons for mui
 import { MdPermContactCalendar, MdPriceCheck, MdClose, MdMenu, MdDynamicForm } from "react-icons/md";
 
 const NavBar = () => {
   const [toggle, setToggle] = useState(false);
+
   const Toggler = () => {
     setToggle(!toggle);
   };
+  const { auth, logout } = useUserAuth()
+  console.log(auth.currentUser)
   function NavLink({
     to,
     className,
@@ -63,8 +68,6 @@ const NavBar = () => {
             </NavLink>
             <HashLink
               onClick={Toggler}
-              activeClassName="text-orange  "
-              inActiveClassName="text-blue "
               smooth
               to="/#features"
               className=" flex items-center "
@@ -73,8 +76,6 @@ const NavBar = () => {
               <p className="ml-5">  Features</p>
             </HashLink>
             <HashLink onClick={Toggler} smooth
-              activeClassName="text-orange  "
-              inActiveClassName="text-blue "
               to="/#pricing"
               className=" flex items-center "
             >
@@ -93,26 +94,51 @@ const NavBar = () => {
               <p className="ml-5"> Contact</p>
             </NavLink>
 
-            <NavLink
-              onClick={Toggler}
-              activeClassName="text-orange   "
-              inActiveClassName="text-blue"
-              smooth
-              to="/login"
-              className=" flex items-center "
-            >
-              <FaHubspot />
-              <p className="ml-5">  Log In</p>
-            </NavLink>
 
-            <HashLink
-              onClick={Toggler}
-              to="/signup"
-              className="  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+            {
+              auth.currentUser ?
+                ""
+                :
+                <NavLink
+                  onClick={Toggler}
+                  activeClassName="text-orange   "
+                  inActiveClassName="text-blue"
+                  smooth
+                  to="/login"
+                  className=" flex items-center "
+                >
+                  <FaHubspot />
+                  <p className="ml-5">  Log In</p>
+                </NavLink>
+
+            }
+
+
+            {
+              auth.currentUser ?
+                <HashLink
+                  onClick={() => {
+                    logout()
+                    Toggler()
+
+                  }}
+                  to="/signup"
+                  className="  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+         `active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 "
+                >
+                  <button>Log Out</button>
+                </HashLink> :
+
+                <HashLink
+                  onClick={Toggler}
+                  to="/signup"
+                  className="  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
                      `active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 "
-            >
-              <button>Get Started</button>
-            </HashLink>
+                >
+                  <button>Get Started</button>
+                </HashLink>
+
+            }
           </div>
         </div>
         <div
@@ -124,7 +150,7 @@ const NavBar = () => {
 
       {/* web view */}
       <div className=" hidden Btablet:block">
-        <nav className="flex h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[100%] shadow-xl z-50 bg-white">
+        <nav className="flex mt-5 h-[70px] justify-between items-center py-3 px-5  fixed top-0 left-0 w-[94%] rounded-xl mx-[3%] shadow-xl z-50 bg-white">
           <Link to="/">
             <img className=" w-32" src={logo} alt="logo" />
           </Link>
@@ -148,7 +174,6 @@ const NavBar = () => {
               Contact
             </NavLink>
             <NavLink
-              activeClassName="text-orange"
               inActiveClassName="text-blue mx-4"
               className="mx-4"
               smooth
@@ -157,7 +182,6 @@ const NavBar = () => {
               Pricing
             </NavLink>
             <NavLink
-              activeClassName="text-orange"
               inActiveClassName="text-blue mx-4"
               className="mx-4"
               smooth
@@ -166,13 +190,20 @@ const NavBar = () => {
               Features
             </NavLink>
 
-            <HashLink
-              to="/signup"
-              className="  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-lg  border-orange sm:p-3 sm:px-10 mr-2"
-            >
-              <button>Sign Up</button>
-            </HashLink>
+            {
+              auth.currentUser ?
+                <div className="ml-16 mr-4 bg-orange w-10 h-10 rounded-full flex justify-center items-center m-auto text-white">
+                  <CgProfile />
+                </div>
+                :
+                <HashLink
+                  to="/signup"
+                  className="  justify-center w-[160px]  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                   active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 text-sm rounded-lg  border-orange sm:p-3 sm:px-10 mr-2"
+                >
+                  <button>Sign Up</button>
+                </HashLink>
+            }
           </div>
         </nav>
       </div>

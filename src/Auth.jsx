@@ -1,9 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-import { getAuth } from "firebase/auth";
-import { db } from "./firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { signOut } from "firebase/auth";
+import { getAuth, signOut } from "firebase/auth";
+
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = createContext();
@@ -20,9 +18,8 @@ export function AuthProvider({ children }) {
 
   function logout() {
     signOut(auth);
-    navigate("/");
   }
-
+console.log(auth.currentUser)
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       setPending(false);
@@ -32,7 +29,7 @@ export function AuthProvider({ children }) {
   if (pending) {
     return (
       <div className=" w-full h-screen fixed right-0 flex justify-center items-center">
-        <p className=" relative w-5 h-5 rounded-full border-r-[2px] border-rl-[2px]  border-green m-auto animate-spin  "></p>
+        <p className=" relative w-10 h-10 rounded-xl border-dotted border-orange border-[8px] border-spacing-5   border-green m-auto animate-spin  "></p>
       </div>
     );
   }

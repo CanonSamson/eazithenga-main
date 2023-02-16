@@ -5,23 +5,22 @@ import flag from "../../asset/icon_svg/flag.svg";
 import lock from "../../asset/icon_svg/lock.svg";
 import { useState } from "react";
 import { db } from "../../firebase-config";
+import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import {
   collection,
   addDoc,
   getDocs,
   serverTimestamp,
+  setDoc,
+  doc,
 } from "firebase/firestore";
-import { Link, useNavigate } from "react-router-dom";
-import { IoCheckmarkCircleSharp } from "react-icons/io5";
-import { useUserAuth } from "../../Auth";
+import { useNavigate } from "react-router-dom";
+
 
 const SignUp = () => {
   const [submit, setSubmit] = useState(false);
   const [errorM, setErrorM] = useState("");
   const [showPassword, setShowPassword] = useState(true);
-
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [verificationCode, setVerificationCode] = useState("");
 
   const navigate = useNavigate();
 
@@ -37,7 +36,7 @@ const SignUp = () => {
   const { name, email, password, storeName, timestamp, whatsappNum, lastname } =
     formData;
 
-  const { auth } = useUserAuth();
+  const auth  = getAuth();
 
   const onChange = (e) => {
     setformData((prevState) => ({
@@ -59,6 +58,7 @@ const SignUp = () => {
       if (userCurrentData) {
         setErrorM("Username is already in use ");
       } else {
+
         const userCredential = await createUserWithEmailAndPassword(
           auth,
           email,
@@ -78,8 +78,9 @@ const SignUp = () => {
         navigate("/ ");
       }
       setSubmit(submit);
+
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
 
       if (error.message === `Firebase: Error (auth/email-already-in-use).`) {
         setErrorM("Email address already in use");
@@ -133,7 +134,7 @@ const SignUp = () => {
                 require="*"
                 icon={profile}
                 onChange={onChange}
-                required="true"
+                required={true}
               />
               <Input
                 label="First Name"
@@ -145,7 +146,7 @@ const SignUp = () => {
                 require="*"
                 icon={profile}
                 onChange={onChange}
-                required="true"
+                required={true}
               />
 
               <Input
@@ -172,7 +173,7 @@ const SignUp = () => {
                 require="*"
                 icon={flag}
                 onChange={onChange}
-                required="true"
+                required={true}
               />
             </div>
 
@@ -231,7 +232,7 @@ const SignUp = () => {
             </div>
             <button className=" p-4 my-10 bg-orange text-white rounded w-[170px] shadow-lg active:scale-105">
               {submit ? (
-                <p className="w-5 border-4 border-dotted m-auto flex justify-center items-center border-white border-r-0 animate-spin duration-150 transition-all  relative h-5 rounded-full"></p>
+                <p className="w-5 border-[7px] border-dotted m-auto flex justify-center items-center border-white animate-spin duration-150 transition-all  relative h-5 rounded-xl"></p>
               ) : (
                 `Submit`
               )}
