@@ -5,22 +5,27 @@ import flag from "../../asset/icon_svg/flag.svg";
 import lock from "../../asset/icon_svg/lock.svg";
 import { useState } from "react";
 import { db } from "../../firebase-config";
+
+
+import { RecaptchaVerifier } from "firebase/auth";
+import { signInWithPhoneNumber } from "firebase/auth";
+
 import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
 import {
   collection,
-  addDoc,
   getDocs,
   serverTimestamp,
   setDoc,
   doc,
 } from "firebase/firestore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
+import VerifyPhoneNum from "../../components/VerifyPhoneNum";
 
 
 const SignUp = () => {
   const [submit, setSubmit] = useState(false);
   const [errorM, setErrorM] = useState("");
-  const [showPassword, setShowPassword] = useState(true);
+  const [phPop, setPhPop] = useState(false)
 
   const navigate = useNavigate();
 
@@ -36,7 +41,7 @@ const SignUp = () => {
   const { name, email, password, storeName, timestamp, whatsappNum, lastname } =
     formData;
 
-  const auth  = getAuth();
+  const auth = getAuth();
 
   const onChange = (e) => {
     setformData((prevState) => ({
@@ -46,61 +51,63 @@ const SignUp = () => {
     console.log(formData);
   };
 
-  const onSubmit = async (e) => {
+
+  function onCaptchverify() {
+
+    window.recaptchaVerifier = new RecaptchaVerifier('sign-in-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        onSignUp();
+      }
+    }, auth);
+
+
+  }
+  const appVerifier = window.recaptchaVerifier;
+
+
+
+  const onSignUp = async (e) => {
     setSubmit(!submit);
     e.preventDefault();
 
     try {
-      const data = await getDocs(collection(db, "users"));
-      const users = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-      const userCurrentData = users.find((user) => user.name === name);
 
-      if (userCurrentData) {
-        setErrorM("Username is already in use ");
-      } else {
+      onCaptchverify()
+      // const phoneNumber = getPhoneNumberFromUserInput();
 
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        // Signed in
-        const user = userCredential.user;
-        // ...
-        updateProfile(auth.currentUser, {
-          displayName: name,
-        });
-
-        const formDataCopy = { ...formData };
-        // delete formDataCopy.password
-        await setDoc(doc(db, "users", user.uid), formDataCopy);
-
-        navigate("/ ");
-      }
-      setSubmit(submit);
+      setPhPop(true)
 
     } catch (error) {
       console.log(error);
 
-      if (error.message === `Firebase: Error (auth/email-already-in-use).`) {
-        setErrorM("Email address already in use");
-      }
-
-      if (error.message === `Firebase: Error (auth/invalid-email).`) {
-        setErrorM("Enter a valid Email address");
-      }
-      if (
-        error.message ===
-        `Firebase: Password should be at least 6 characters (auth/weak-password).`
-      ) {
-        setErrorM("Password should be at least 6 characters ");
-      }
       setSubmit(submit);
     }
   };
 
+  const VerifyPhoneNum = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      const confirmationResult = await signInWithPhoneNumber(auth, formData.whatsappNum, appVerifier)
+
+      // SMS sent. Prompt user to type the code from the message, then sign the
+      // user in with confirmationResult.confirm(code).
+      window.confirmationResult = confirmationResult;
+      // ...
+      setPhPop(false)
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+
+
   console.log(formData);
-  return (
+  return !auth.currentUser ?
     <div className=" pb-20">
       <div className=" signup w-full h-[200px] tablet:h-[400px] "></div>
       <div className=" max-w-[900px] m-auto  ">
@@ -237,6 +244,8 @@ const SignUp = () => {
                 `Submit`
               )}
             </button>
+
+            <VerifyPhoneNum phPop={phPop} />
           </form>
         </div>
       </div>
@@ -265,7 +274,8 @@ const SignUp = () => {
         </div>
       )} */}
     </div>
-  );
+    :
+    <Navigate to="/" />
 };
 
 export default SignUp;

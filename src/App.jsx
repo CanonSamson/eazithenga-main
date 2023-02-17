@@ -13,6 +13,7 @@ import ContactUs from "./components/ContactUs";
 import Login from "./pages/Main/Login";
 import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./Auth";
+import VerifyPhoneNum from "./components/VerifyPhoneNum";
 
 function App() {
   return (
@@ -24,9 +25,10 @@ function App() {
             <Route path="/" element={<LandingPage />}>
               <Route path="/" element={<Pricing />} />
             </Route>
-            <Route path="/signup" element={<SignUp />} />
+            <Route path="/d" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/signup" element={<VerifyPhoneNum />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>

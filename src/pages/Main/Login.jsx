@@ -10,7 +10,7 @@ import flag from "../../asset/icon_svg/flag.svg";
 
 import { useState } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 
 
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -21,6 +21,9 @@ function Login() {
 
   const [submit, setSubmit] = useState(false)
   const [errorM, setErrorM] = useState('')
+  const [errorP, setErrorP] = useState('')
+
+
   // const [showPassword, setShowPassword] = useState(true)
 
   const navigate = useNavigate()
@@ -49,7 +52,7 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
 
       if (userCredential.user) {
-        navigate("/home")
+        navigate("/")
       }
     } catch (error) {
       setSubmit(false)
@@ -58,10 +61,11 @@ function Login() {
       if (error.message === `Firebase: Error (auth/user-not-found).`) {
         setErrorM("Sorry This User Is Not Register")
 
+        // WhatsApp Number must be a vaild SF telephone number (11 digits), don't include + 
       }
 
       if (error.message === `Firebase: Error (auth/wrong-password).`) {
-        setErrorM('Your Password Is Wrong')
+        setErrorP('incorrect password pls try again')
       }
 
       if (error.message === `Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests).`) {
@@ -73,7 +77,8 @@ function Login() {
   console.log(errorM)
 
 
-  return (
+
+  return !auth.currentUser ?
     <div>
       <div className=" p-5 h-screen w-full flex flex-col justify-center items-center">
         <span className=" bg-slate-100 w-10 h-10 text-xl absolute left-[10%] z-20 top-4 shadow-lg">
@@ -92,7 +97,7 @@ function Login() {
               require="*"
               code="+27"
               icon={flag}
-              errorMessage="WhatsApp Number must be a vaild SF telephone number (11 digits), don't include +   "
+              errorMessage={errorM}
               value={email}
               onChange={onChange}
             // pattern="^\d{11}$"
@@ -102,7 +107,7 @@ function Login() {
               type="password"
               id="password"
               placeholder="Password"
-              errorMessage="incorrect password pls try again"
+              errorMessage={errorP}
               value={password}
               lable="Password"
               icon={lock}
@@ -145,7 +150,8 @@ function Login() {
         </span>
       </div>
     </div>
-  );
+    :
+    <Navigate to="/" />
 }
 
 export default Login;
