@@ -71,7 +71,7 @@ const VerifyPhoneNum = ({ phPop }) => {
         onCaptchverify()
 
         const appVerifier = window.recaptchaVerifier;
-        const phoneNumber = `+234${whatsappName}`
+        const phoneNumber = `+27${whatsappName}`
         console.log(phoneNumber)
 
         try {
