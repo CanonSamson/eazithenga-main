@@ -134,7 +134,7 @@ const VerifyPhoneNum = ({ phPop }) => {
         document.body.appendChild(script);
     }, []);
 
-    return (
+    return !auth.currentUser ?
         <div className=" relative">
 
             <form className={`${verify ? " top-0 left-0 h-screen p-5  flex flex-col justify-center items-center  z-50 w-full" : " hidden "}`} onSubmit={onVerify}>
@@ -187,7 +187,8 @@ const VerifyPhoneNum = ({ phPop }) => {
 
             </form>
         </div>
-    );
+    :
+    <Navigate to="/profile" />
 }
 
 export default VerifyPhoneNum;

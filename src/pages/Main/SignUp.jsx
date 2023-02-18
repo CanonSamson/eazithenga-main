@@ -10,7 +10,7 @@ import { db } from "../../firebase-config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
 
-import {  getAuth, updateProfile } from "firebase/auth";
+import { getAuth, updateProfile } from "firebase/auth";
 import {
   collection,
   getDocs,
@@ -249,30 +249,6 @@ const SignUp = () => {
           </form>
         </div>
       </div>
-      {/* {submit && (
-        <div className=" fixed w-full h-screen bg-gray-50 top-0 flex justify-center items-center mx-auto z-50 left-0 ">
-          <div className=" shadow-xl p-5 max-w-[500px]  bg-white pt-20 flex flex-col   justify-center items-center relative">
-            <div className=" p-4 text-white bg-orange rounded-full absolute top-[-30px]">
-              <IoCheckmarkCircleSharp size={70} />
-            </div>
-            <h1 className=" text-2xl Stablet:text-4xl font-semibold ">
-              THANK YOU
-            </h1>
-            <p className=" text-center my-5">
-              We've received your submission and we'll be in touch soon!
-            </p>
-            <Link to="/">
-              <button
-                className=" bg-orange text-white active:opacity-70 active:shadow-2xl
-                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black p-4 
-                     text-sm rounded  border-orange sm:p-3 sm:px-10 "
-              >
-                KEEP EXPLORING
-              </button>
-            </Link>
-          </div>
-        </div>
-      )} */}
     </div>
     :
     <Navigate to="/" />

@@ -47,14 +47,24 @@ const NavBar = () => {
           </div>
         </div>
         <div
-          className={`${toggle ? "flex top-0 h-screen" : "flex top-[-1000%] h-[10px]"
+          className={`${toggle ? "flex flex-col  top-0 h-screen" : "flex top-[-1000%] h-[10px]"
             } duration-300 fixed right-0 w-[70%] z-50 bg-white p-5 rounded-br-xl shadow-xl h-screen`}
         >
 
-          <div className=" flex flex-col  gap-6 ">
-            <div className=" text-orange pb-10" onClick={Toggler}>
+          <div className="  flex justify-between  items-center">
+            <div className=" text-orange " onClick={Toggler}>
               <MdClose size={34} />
             </div>
+
+            {
+              auth.currentUser &&
+              <Link to="/profile" className=" bg-orange w-10 h-10 rounded-full flex justify-center items-center  text-white">
+                <CgProfile />
+              </Link>
+            }
+          </div>
+          <div className=" flex flex-col mt-10 gap-6 ">
+
             <NavLink
               onClick={Toggler}
               activeClassName="text-orange  "
@@ -123,17 +133,16 @@ const NavBar = () => {
 
                   }}
                   to="/signup"
-                  className="  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-         `active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 "
-                >
+                  className="  w-[150px] justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                  active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 ">
                   <button>Log Out</button>
                 </HashLink> :
 
                 <HashLink
                   onClick={Toggler}
                   to="/signup"
-                  className="  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
-                     `active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 "
+                  className="  w-[150px]  justify-center rounded  flex  bg-orange text-white active:opacity-70 active:shadow-2xl
+                     active:bg-white font-semibold shadow-lg active:scale-105 active:text-black px-4 py-2 text-sm  border-orange sm:p-3 sm:px-10 "
                 >
                   <button>Get Started</button>
                 </HashLink>
@@ -192,9 +201,9 @@ const NavBar = () => {
 
             {
               auth.currentUser ?
-                <div className="ml-16 mr-4 bg-orange w-10 h-10 rounded-full flex justify-center items-center m-auto text-white">
+                <Link to="/profile" className=" bg-orange w-10 h-10 rounded-full flex justify-center items-center  text-white">
                   <CgProfile />
-                </div>
+                </Link>
                 :
                 <HashLink
                   to="/signup"
