@@ -14,6 +14,7 @@ import Login from "./pages/Main/Login";
 import ScrollToTop from "./components/ScrollToTop";
 import { AuthProvider } from "./Auth";
 import VerifyPhoneNum from "./components/VerifyPhoneNum";
+import ProfilePage from "./pages/Main/ProfilePage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/signup" element={<VerifyPhoneNum />} />
           </Route>
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>

@@ -10,7 +10,7 @@ import { db } from "../../firebase-config";
 import { RecaptchaVerifier } from "firebase/auth";
 import { signInWithPhoneNumber } from "firebase/auth";
 
-import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase/auth";
+import {  getAuth, updateProfile } from "firebase/auth";
 import {
   collection,
   getDocs,
